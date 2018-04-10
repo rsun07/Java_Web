@@ -3,27 +3,60 @@
  "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
 <web-app>
-
-    <context-param>
-        <param-name>namespace</param-name>
-        <param-value>all servlet shared context param</param-value>
-    </context-param>
-    <context-param>
-        <param-name>servlet-context</param-name>
-        <param-value>servlet-context-value</param-value>
-    </context-param>
-
-    <!--Register Servlet life cycle-->
     <servlet>
-        <servlet-name>servlet</servlet-name>
-        <servlet-class>pers.xiaoming.javaweb.BaseServlet</servlet-class>
-        <load-on-startup>-1</load-on-startup>
+        <servlet-name>fullpath</servlet-name>
+        <servlet-class>pers.xiaoming.javaweb.FullPathServlet</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>extension-mapping</servlet-name>
+        <servlet-class>pers.xiaoming.javaweb.ExtensionMappingServlet</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>path-mapping-with-star</servlet-name>
+        <servlet-class>pers.xiaoming.javaweb.PathMappingWithStarServlet</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>path-mapping-without-star</servlet-name>
+        <servlet-class>pers.xiaoming.javaweb.PathMappingWithoutStarServlet</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>path-mapping-with-star-long</servlet-name>
+        <servlet-class>pers.xiaoming.javaweb.PathMappingWithStarLongServlet</servlet-class>
     </servlet>
 
 
     <servlet-mapping>
-        <servlet-name>servlet</servlet-name>
-        <url-pattern>/servlet</url-pattern>
+        <servlet-name>fullpath</servlet-name>
+        <url-pattern>/path/fullpath</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>extension-mapping</servlet-name>
+        <url-pattern>/path/*.do</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>path-mapping-with-star</servlet-name>
+        <url-pattern>/path/star/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>path-mapping-without-star</servlet-name>
+        <url-pattern>/path/nostar/</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>path-mapping-with-star-long</servlet-name>
+        <url-pattern>/path/star/long/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>fullpath</servlet-name>
+        <url-pattern>/path/star/fullpath</url-pattern>
     </servlet-mapping>
 
 
