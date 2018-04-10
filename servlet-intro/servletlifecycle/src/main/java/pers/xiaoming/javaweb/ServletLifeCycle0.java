@@ -3,18 +3,18 @@ package pers.xiaoming.javaweb;
 import javax.servlet.*;
 import java.io.IOException;
 
-public class ServletLifeCycle1 implements Servlet {
+public class ServletLifeCycle0 implements Servlet {
 
     private ServletConfig config;
 
-    public ServletLifeCycle1() {
-        System.out.println("Create Servlet 1");
+    public ServletLifeCycle0() {
+        System.out.println("Create Servlet 0");
     }
 
     @Override
     public void init(ServletConfig servletConfig) throws ServletException {
         this.config = servletConfig;
-        System.out.println("Init Servlet 1");
+        System.out.println("Init Servlet 0");
     }
 
     @Override
@@ -24,7 +24,7 @@ public class ServletLifeCycle1 implements Servlet {
 
     @Override
     public void service(ServletRequest servletRequest, ServletResponse servletResponse) throws ServletException, IOException {
-        System.out.println("Executing Servlet 1");
+        System.out.println("Executing Servlet 0");
     }
 
     @Override
@@ -36,6 +36,6 @@ public class ServletLifeCycle1 implements Servlet {
 
     @Override
     public void destroy() {
-        System.out.println("Destroying Servlet 1");
+        System.out.println("Destroying Servlet 0");
     }
 }

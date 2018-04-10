@@ -8,13 +8,13 @@ public class ServletLifeCycle2 implements Servlet {
     private ServletConfig config;
 
     public ServletLifeCycle2() {
-        System.out.println("Create Servlet");
+        System.out.println("Create Servlet 2");
     }
 
     @Override
     public void init(ServletConfig servletConfig) throws ServletException {
         this.config = servletConfig;
-        System.out.println("Init Servlet");
+        System.out.println("Init Servlet 2");
     }
 
     @Override
@@ -24,13 +24,7 @@ public class ServletLifeCycle2 implements Servlet {
 
     @Override
     public void service(ServletRequest servletRequest, ServletResponse servletResponse) throws ServletException, IOException {
-        ServletContext context = config.getServletContext();
-
-        config.getInitParameterNames();
-
-        context.setAttribute("email", "myeamil@email.com");
-
-        System.out.println("service Servlet");
+        System.out.println("Executing Servlet 2");
     }
 
     @Override
@@ -42,6 +36,6 @@ public class ServletLifeCycle2 implements Servlet {
 
     @Override
     public void destroy() {
-        System.out.println("Destroying Servlet");
+        System.out.println("Destroying Servlet 2");
     }
 }

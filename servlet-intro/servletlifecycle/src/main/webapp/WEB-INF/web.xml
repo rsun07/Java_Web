@@ -15,37 +15,40 @@
 
     <!--Register Servlet life cycle-->
     <servlet>
-        <servlet-name>servlet-lifecycle</servlet-name>
-        <servlet-class>pers.xiaoming.javaweb.ServletLifeCycle1</servlet-class>
-        <init-param>
-            <param-name>namespace</param-name>
-            <param-value>servlet-config</param-value>
-        </init-param>
-        <init-param>
-            <param-name>address</param-name>
-            <param-value>servlet-java-web</param-value>
-        </init-param>
-
+        <servlet-name>servlet0</servlet-name>
+        <servlet-class>pers.xiaoming.javaweb.ServletLifeCycle0</servlet-class>
         <load-on-startup>1</load-on-startup>
     </servlet>
 
     <servlet>
-        <servlet-name>servlet-lifecycle2</servlet-name>
+        <servlet-name>servlet1</servlet-name>
+        <servlet-class>pers.xiaoming.javaweb.ServletLifeCycle1</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <servlet>
+        <servlet-name>servlet2</servlet-name>
         <servlet-class>pers.xiaoming.javaweb.ServletLifeCycle2</servlet-class>
         <load-on-startup>2</load-on-startup>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>servlet-lifecycle</servlet-name>
-        <url-pattern>/lifecycle</url-pattern>
+        <servlet-name>servlet0</servlet-name>
+        <url-pattern>/lifecycle0</url-pattern>
     </servlet-mapping>
 
     <servlet-mapping>
-        <servlet-name>servlet-lifecycle2</servlet-name>
+        <servlet-name>servlet1</servlet-name>
+        <url-pattern>/lifecycle1</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>servlet2</servlet-name>
         <url-pattern>/lifecycle2</url-pattern>
     </servlet-mapping>
 
+
     <welcome-file-list>
-        <welcome-file>helloworld.html</welcome-file>
+        <welcome-file>servlet-lifecycle.html</welcome-file>
     </welcome-file-list>
 </web-app>
