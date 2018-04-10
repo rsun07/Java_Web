@@ -5,28 +5,36 @@ import java.io.IOException;
 
 public class ServletLifeCycle implements Servlet {
 
+    private ServletConfig config;
+
     public ServletLifeCycle() {
         System.out.println("Create Servlet");
     }
 
     @Override
     public void init(ServletConfig servletConfig) throws ServletException {
+        this.config = servletConfig;
         System.out.println("Init Servlet");
     }
 
     @Override
     public ServletConfig getServletConfig() {
-        return null;
+        return config;
     }
 
     @Override
     public void service(ServletRequest servletRequest, ServletResponse servletResponse) throws ServletException, IOException {
+        ServletContext context = config.getServletContext();
+
+
         System.out.println("service Servlet");
     }
 
     @Override
     public String getServletInfo() {
-        return null;
+        String info = "Servlet info, author, version and so on";
+        System.out.println("Get Servlet Info " + info);
+        return info;
     }
 
     @Override
