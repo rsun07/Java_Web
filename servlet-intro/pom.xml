@@ -15,6 +15,7 @@
 
     <modules>
         <module>servletlifecycle</module>
+        <module>helloworld</module>
     </modules>
 
     <properties>
