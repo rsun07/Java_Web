@@ -14,8 +14,9 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>servletlifecycle</module>
         <module>helloworld</module>
+        <module>servletlifecycle</module>
+        <module>servlet-config-and-context</module>
     </modules>
 
     <properties>

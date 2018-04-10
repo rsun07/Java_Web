@@ -3,18 +3,18 @@ package pers.xiaoming.javaweb;
 import javax.servlet.*;
 import java.io.IOException;
 
-public class ServletLifeCycle implements Servlet {
+public class ServletLifeCycle1 implements Servlet {
 
     private ServletConfig config;
 
-    public ServletLifeCycle() {
-        System.out.println("Create Servlet");
+    public ServletLifeCycle1() {
+        System.out.println("Create Servlet 1");
     }
 
     @Override
     public void init(ServletConfig servletConfig) throws ServletException {
         this.config = servletConfig;
-        System.out.println("Init Servlet");
+        System.out.println("Init Servlet 1");
     }
 
     @Override
