@@ -17,13 +17,13 @@
     <servlet>
         <servlet-name>servlet0</servlet-name>
         <servlet-class>pers.xiaoming.javaweb.ServletLifeCycle0</servlet-class>
-        <load-on-startup>1</load-on-startup>
+        <load-on-startup>-1</load-on-startup>
     </servlet>
 
     <servlet>
         <servlet-name>servlet1</servlet-name>
         <servlet-class>pers.xiaoming.javaweb.ServletLifeCycle1</servlet-class>
-        <load-on-startup>1</load-on-startup>
+        <load-on-startup>0</load-on-startup>
     </servlet>
 
     <servlet>
