@@ -17,6 +17,7 @@
         <module>helloworld</module>
         <module>servletlifecycle</module>
         <module>servlet-config-and-context</module>
+        <module>path</module>
     </modules>
 
     <properties>
