@@ -5,11 +5,11 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>pers.xiaoming.javaweb</groupId>
-  <artifactId>servlet_lifecycle</artifactId>
+  <artifactId>servlet-lifecycle</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>war</packaging>
 
-  <name>javaee_web Maven Webapp</name>
+  <name>servlet-lifecycle Maven Web</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
@@ -20,21 +20,11 @@
   </properties>
 
   <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.11</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>javax.servlet</groupId>
-      <artifactId>javax.servlet-api</artifactId>
-      <version>RELEASE</version>
-    </dependency>
+
   </dependencies>
 
   <build>
-    <finalName>servlet_lifecycle</finalName>
+    <finalName>servlet-lifecycle</finalName>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>
         <plugin>

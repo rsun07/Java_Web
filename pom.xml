@@ -10,7 +10,7 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>servlet_lifecycle</module>
+        <module>servletlifecycle</module>
     </modules>
 
     <properties>
