@@ -16,7 +16,7 @@
     <!--Register Servlet life cycle-->
     <servlet>
         <servlet-name>servlet</servlet-name>
-        <servlet-class>pers.xiaoming.javaweb.Servlet</servlet-class>
+        <servlet-class>pers.xiaoming.javaweb.BaseServlet</servlet-class>
         <load-on-startup>-1</load-on-startup>
     </servlet>
 
