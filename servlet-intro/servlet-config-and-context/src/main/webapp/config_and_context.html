@@ -8,13 +8,13 @@ Connected to server <br>
 <br>
 When hit the /servlet1 path <br>
 
-Create Servlet 1 <br>
-Init Servlet 1 <br>
-Executing Servlet 1 <br>
+    Create Servlet 1 <br>
+    Init Servlet 1 <br>
+    Executing Servlet 1 <br>
 
-<br>
+    <br>
 
-"<br>
+    "<br>
     Init Parameter key is [address], value is [servlet1-java-web] <br>
 
     Init Parameter key is [namespace], value is [servlet1-config] <br>
@@ -22,10 +22,9 @@ Executing Servlet 1 <br>
     context path is: <br>
 
     real path for /config_and_context.html is: /Users/xiaoming.sun/Downloads/apache-tomcat-9.0.7/webapps/ROOT/config_and_context.html <br>
-    Servlet 1 : Context Attribute namespace is: null <br>
-    Servlet 1 : Remove Context Attribute namespace <br>
+    Servlet 1 : Context namespace is: all servlet shared context param <br>
     Servlet 1 : Context Attribute email is: null <br>
-"<br>
+    "<br>
 
 <br>
 
@@ -38,8 +37,12 @@ Executing Servlet 1 <br>
         Init Parameter key is [address], value is [servlet2-java-web] <br>
 
         Init Parameter key is [namespace], value is [servlet2-config] <br>
-        Servlet 2 : Context Attribute namespace is: null <br>
+        <br>
+
+        Servlet 2 : Context Attribute namespace is: all servlet shared context param <br>
         Servlet 2 : Context Attribute email is: myeamil@email.com <br>
+        Servlet 2 remove Attribute email <br>
+        " <br>
 <br>
 
     When hit the /servlet1 path again <br>
@@ -53,7 +56,11 @@ Executing Servlet 1 <br>
         context path is: <br>
 
         real path for /config_and_context.html is: /Users/xiaoming.sun/Downloads/apache-tomcat-9.0.7/webapps/ROOT/config_and_context.html <br>
-        Servlet 1 : Context Attribute namespace is: null <br>
-        Servlet 1 : Remove Context Attribute namespace <br>
-        Servlet 1 : Context Attribute email is: myeamil@email.com <br>
+        Servlet 1 : Context namespace is: all servlet shared context param <br>
+        Servlet 1 : Context Attribute email is: null <br>
         "<br>
+<br>
+<br>
+Destroying Servlet 1 <br>
+Destroying Servlet 2 <br>
+Disconnected from server <br>

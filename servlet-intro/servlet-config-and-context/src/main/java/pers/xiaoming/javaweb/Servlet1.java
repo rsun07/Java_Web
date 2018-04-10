@@ -33,7 +33,7 @@ public class Servlet1 implements Servlet {
         while (elements.hasMoreElements()) {
             String name = elements.nextElement();
             String value = config.getInitParameter(name);
-            System.out.printf("\nInit Parameter key is <%s>, value is <%s>\n", name, value);
+            System.out.printf("\nInit Parameter key is [%s], value is [%s]\n", name, value);
         }
 
         ServletContext context = config.getServletContext();
@@ -42,9 +42,7 @@ public class Servlet1 implements Servlet {
 
         System.out.println("\n real path for /config_and_context.html is: " + context.getRealPath("/config_and_context.html"));
 
-        System.out.println("Servlet 1 : Context Attribute namespace is: " + context.getAttribute("namespace"));
-        System.out.println("Servlet 1 : Remove Context Attribute namespace");
-        context.removeAttribute("namespace");
+        System.out.println("Servlet 1 : Context namespace is: " + context.getInitParameter("namespace"));
 
         System.out.println("Servlet 1 : Context Attribute email is: " + context.getAttribute("email"));
         context.setAttribute("email", "myeamil@email.com");

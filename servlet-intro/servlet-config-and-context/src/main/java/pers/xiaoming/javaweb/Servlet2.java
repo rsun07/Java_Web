@@ -32,14 +32,16 @@ public class Servlet2 implements Servlet {
         while (elements.hasMoreElements()) {
             String name = elements.nextElement();
             String value = config.getInitParameter(name);
-            System.out.printf("\nInit Parameter key is <%s>, value is <%s>\n", name, value);
+            System.out.printf("\nInit Parameter key is [%s], value is [%s]\n", name, value);
         }
 
         ServletContext context = config.getServletContext();
 
-        System.out.println("Servlet 2 : Context Attribute namespace is: " + context.getAttribute("namespace"));
+        System.out.println("Servlet 2 : Context Attribute namespace is: " + context.getInitParameter("namespace"));
 
         System.out.println("Servlet 2 : Context Attribute email is: " + context.getAttribute("email"));
+        System.out.println("Servlet 2 remove Attribute email");
+        context.removeAttribute("email");
     }
 
     @Override
