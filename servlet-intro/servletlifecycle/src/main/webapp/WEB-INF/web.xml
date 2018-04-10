@@ -29,9 +29,20 @@
         <load-on-startup>1</load-on-startup>
     </servlet>
 
+    <servlet>
+        <servlet-name>servlet-lifecycle2</servlet-name>
+        <servlet-class>pers.xiaoming.javaweb.ServletLifeCycle2</servlet-class>
+        <load-on-startup>2</load-on-startup>
+    </servlet>
+
     <servlet-mapping>
         <servlet-name>servlet-lifecycle</servlet-name>
         <url-pattern>/lifecycle</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>servlet-lifecycle2</servlet-name>
+        <url-pattern>/lifecycle2</url-pattern>
     </servlet-mapping>
 
     <welcome-file-list>

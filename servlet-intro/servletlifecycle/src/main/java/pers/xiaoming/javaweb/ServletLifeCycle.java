@@ -26,8 +26,18 @@ public class ServletLifeCycle implements Servlet {
     public void service(ServletRequest servletRequest, ServletResponse servletResponse) throws ServletException, IOException {
         ServletContext context = config.getServletContext();
 
+        config.getInitParameterNames();
+
+        context.setAttribute("email", "myeamil@email.com");
 
         System.out.println("service Servlet");
+
+        context.getContextPath();
+
+        context.getRealPath("/image");
+
+        context.getAttribute("");
+        context.removeAttribute("");
     }
 
     @Override
