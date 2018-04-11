@@ -3,16 +3,56 @@
  "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
 <web-app>
+
+    <context-param>
+        <param-name>namespace</param-name>
+        <param-value>context-param</param-value>
+    </context-param>
+
     <servlet>
-        <servlet-name>servlet0</servlet-name>
-        <servlet-class>pers.xiaoming.javaweb.ServletLifeCycle0</servlet-class>
-        <load-on-startup>-1</load-on-startup>
+        <servlet-name>myservlet</servlet-name>
+        <servlet-class>pers.xiaoming.javaweb.generic_servlet.MyServlet</servlet-class>
+
+        <init-param>
+            <param-name>namespace</param-name>
+            <param-value>myservlet-param</param-value>
+        </init-param>
+    </servlet>
+
+    <servlet>
+        <servlet-name>myservlet-empty-init</servlet-name>
+        <servlet-class>pers.xiaoming.javaweb.generic_servlet.MyServlet</servlet-class>
+
+        <init-param>
+            <param-name>namespace</param-name>
+            <param-value>myservlet-empty-init-param</param-value>
+        </init-param>
+    </servlet>
+
+    <servlet>
+        <servlet-name>javaservlet</servlet-name>
+        <servlet-class>pers.xiaoming.javaweb.generic_servlet.MyServlet</servlet-class>
+
+        <init-param>
+            <param-name>namespace</param-name>
+            <param-value>javaservlet-param</param-value>
+        </init-param>
     </servlet>
 
 
     <servlet-mapping>
-        <servlet-name>servlet0</servlet-name>
-        <url-pattern>/lifecycle0</url-pattern>
+        <servlet-name>myservlet</servlet-name>
+        <url-pattern>/implementation/myservlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>myservlet-empty-init</servlet-name>
+        <url-pattern>/implementation/myservlet_empty_init</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>javaservlet</servlet-name>
+        <url-pattern>/implementation/javaservlet</url-pattern>
     </servlet-mapping>
 
 
