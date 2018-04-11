@@ -36,7 +36,7 @@
 
     <servlet-mapping>
         <servlet-name>extension-mapping</servlet-name>
-        <url-pattern>/path/*.do</url-pattern>
+        <url-pattern>*.action</url-pattern>
     </servlet-mapping>
 
     <servlet-mapping>
@@ -44,10 +44,10 @@
         <url-pattern>/path/star/*</url-pattern>
     </servlet-mapping>
 
-    <servlet-mapping>
-        <servlet-name>path-mapping-without-star</servlet-name>
-        <url-pattern>/path/nostar/</url-pattern>
-    </servlet-mapping>
+    <!--<servlet-mapping>-->
+        <!--<servlet-name>path-mapping-without-star</servlet-name>-->
+        <!--<url-pattern>/path/nostar/</url-pattern>-->
+    <!--</servlet-mapping>-->
 
     <servlet-mapping>
         <servlet-name>path-mapping-with-star-long</servlet-name>
