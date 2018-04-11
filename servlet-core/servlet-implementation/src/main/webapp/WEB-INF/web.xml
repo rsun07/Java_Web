@@ -21,7 +21,7 @@
 
     <servlet>
         <servlet-name>myservlet-empty-init</servlet-name>
-        <servlet-class>pers.xiaoming.javaweb.generic_servlet.MyServlet</servlet-class>
+        <servlet-class>pers.xiaoming.javaweb.generic_servlet.MyServletEmptyInit</servlet-class>
 
         <init-param>
             <param-name>namespace</param-name>
@@ -31,7 +31,7 @@
 
     <servlet>
         <servlet-name>javaservlet</servlet-name>
-        <servlet-class>pers.xiaoming.javaweb.generic_servlet.MyServlet</servlet-class>
+        <servlet-class>pers.xiaoming.javaweb.generic_servlet.JavaServlet</servlet-class>
 
         <init-param>
             <param-name>namespace</param-name>
@@ -58,6 +58,6 @@
 
 
     <welcome-file-list>
-        <welcome-file>servlet-lifecycle.html</welcome-file>
+        <welcome-file>servlet-implementation.html</welcome-file>
     </welcome-file-list>
 </web-app>
