@@ -18,10 +18,10 @@
         <servlet-class>pers.xiaoming.javaweb.PathMappingWithStarServlet</servlet-class>
     </servlet>
 
-    <servlet>
-        <servlet-name>path-mapping-without-star</servlet-name>
-        <servlet-class>pers.xiaoming.javaweb.PathMappingWithoutStarServlet</servlet-class>
-    </servlet>
+    <!--<servlet>-->
+        <!--<servlet-name>path-mapping-without-star</servlet-name>-->
+        <!--<servlet-class>pers.xiaoming.javaweb.PathMappingWithoutStarServlet</servlet-class>-->
+    <!--</servlet>-->
 
     <servlet>
         <servlet-name>path-mapping-with-star-long</servlet-name>
