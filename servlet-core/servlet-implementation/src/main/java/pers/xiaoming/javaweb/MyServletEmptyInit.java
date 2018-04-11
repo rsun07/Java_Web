@@ -1,6 +1,5 @@
-package pers.xiaoming.javaweb.generic_servlet;
+package pers.xiaoming.javaweb;
 
-import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;

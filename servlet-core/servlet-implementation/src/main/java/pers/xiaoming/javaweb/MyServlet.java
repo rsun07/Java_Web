@@ -1,12 +1,12 @@
-package pers.xiaoming.javaweb.generic_servlet;
+package pers.xiaoming.javaweb;
 
 import javax.servlet.*;
 import java.io.IOException;
 
-public class JavaServlet extends GenericServlet {
+public class MyServlet extends MyGenericServlet {
     @Override
-    public void service(ServletRequest req, ServletResponse res) throws ServletException, IOException {
-        System.out.println("Executing Java Servlet service method!");
+    public void service(ServletRequest servletRequest, ServletResponse servletResponse) throws ServletException, IOException {
+        System.out.println("Executing MyServlet service method!");
 
         String param = this.getInitParameter("namespace");
         String servletName = this.getServletName();
@@ -19,7 +19,8 @@ public class JavaServlet extends GenericServlet {
     }
 
     @Override
-    public void init() {
-        System.out.println("Initialize Java Servlet overrides empty init()!");
+    public void init(ServletConfig servletConfig) throws ServletException {
+        super.init(servletConfig);
+        System.out.println("Initialize My Servlet");
     }
 }

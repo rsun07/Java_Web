@@ -1,4 +1,4 @@
-package pers.xiaoming.javaweb.generic_servlet;
+package pers.xiaoming.javaweb;
 
 import javax.servlet.*;
 import java.io.IOException;
