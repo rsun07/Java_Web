@@ -1,23 +1,11 @@
-1. Hit "http://localhost:8080/implementation/myservlet"
+1. For params:
 
-"Initialize My Generic Servlet
-Initialize My Servlet
-Executing MyServlet service method!
+Hit "http://localhost:8080/httpservlet/params?name=ryan,mike,aaa&age=23"
 
-Init param in servlet [myservlet] for namespace is : [myservlet-param]
-Context param get by servlet [myservlet] for namespace is : [context-param]"
+Response:
 
-
-2. Hit "http://localhost:8080/implementation/myservlet_empty_init"
-
-"Initialize My Generic Servlet
-Initialize MyServlet overrides empty init()!
-Executing MyServlet Empty Init service method!"
-
-3. Hit "http://localhost:8080/implementation/javaservlet"
-
-"Initialize Java Servlet overrides empty init()!
-Executing Java Servlet service method!
-
-Init param in servlet [javaservlet] for namespace is : [javaservlet-param]
-Context param get by servlet [javaservlet] for namespace is : [context-param]"
+"getParameter("name") is ryan,mike,aaa
+getParameterValues("name")[0] is ryan,mike,aaa
+name values is : [ryan,mike,aaa]
+age is : 23
+"

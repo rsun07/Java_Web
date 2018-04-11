@@ -10,10 +10,10 @@
 
     <servlet-mapping>
         <servlet-name>parameters</servlet-name>
-        <url-pattern>/httpservlet/parameters</url-pattern>
+        <url-pattern>/httpservlet/params</url-pattern>
     </servlet-mapping>
 
     <welcome-file-list>
-        <welcome-file>servlet-implementation.html</welcome-file>
+        <welcome-file>httpservlet.html</welcome-file>
     </welcome-file-list>
 </web-app>
