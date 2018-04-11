@@ -4,13 +4,13 @@
 
 <web-app>
     <servlet>
-        <servlet-name>myservlet</servlet-name>
-        <servlet-class>pers.xiaoming.javaweb.MyServlet</servlet-class>
+        <servlet-name>parameters</servlet-name>
+        <servlet-class>pers.xiaoming.javaweb.HttpServletParams</servlet-class>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>myservlet</servlet-name>
-        <url-pattern>/implementation/myservlet</url-pattern>
+        <servlet-name>parameters</servlet-name>
+        <url-pattern>/httpservlet/parameters</url-pattern>
     </servlet-mapping>
 
     <welcome-file-list>
