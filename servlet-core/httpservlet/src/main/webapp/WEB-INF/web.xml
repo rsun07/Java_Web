@@ -8,9 +8,29 @@
         <servlet-class>pers.xiaoming.javaweb.HttpServletParams</servlet-class>
     </servlet>
 
+    <servlet>
+        <servlet-name>redirectserver</servlet-name>
+        <servlet-class>pers.xiaoming.javaweb.redirect.ForwardServer</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>redirectreceiptor</servlet-name>
+        <servlet-class>pers.xiaoming.javaweb.redirect.ForwardReceiptor</servlet-class>
+    </servlet>
+
     <servlet-mapping>
         <servlet-name>parameters</servlet-name>
         <url-pattern>/httpservlet/params</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>redirectserver</servlet-name>
+        <url-pattern>/httpservlet/redirect/forwardserver</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>redirectreceiptor</servlet-name>
+        <url-pattern>/httpservlet/redirect/forwardreceiptor</url-pattern>
     </servlet-mapping>
 
     <welcome-file-list>
