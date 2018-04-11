@@ -1,4 +1,4 @@
-package pers.xiaoming.javaweb.redirect;
+package pers.xiaoming.javaweb.forward;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -16,10 +16,10 @@ public class IncludeServer extends HttpServlet {
 
         // in forward, the output stream hasn't open yet
         // so this line and the last line won't show up
-        out.write("Before Redirect Include Server redirect ");
+        out.write("Before Forward Include Server forward ");
 
         req.getRequestDispatcher("includereceiptor").include(req, resp);
 
-        out.write("After Redirect Include Server redirect ");
+        out.write("After Forward Include Server forward ");
     }
 }

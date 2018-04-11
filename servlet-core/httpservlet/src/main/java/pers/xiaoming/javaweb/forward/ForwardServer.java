@@ -1,4 +1,4 @@
-package pers.xiaoming.javaweb.redirect;
+package pers.xiaoming.javaweb.forward;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -16,10 +16,10 @@ public class ForwardServer extends HttpServlet {
 
         // in forward, the output stream hasn't open yet
         // so this line and the last line won't show up
-        out.write("Before Redirect Forward Server redirect ");
+        out.write("Before Forward Server forward ");
 
         req.getRequestDispatcher("forwardreceiptor").forward(req, resp);
 
-        out.write("After Redirect Forward Server redirect ");
+        out.write("After Forward Server forward ");
     }
 }
