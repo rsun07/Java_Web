@@ -9,13 +9,23 @@
     </servlet>
 
     <servlet>
-        <servlet-name>redirectserver</servlet-name>
+        <servlet-name>redirect-forward-server</servlet-name>
         <servlet-class>pers.xiaoming.javaweb.redirect.ForwardServer</servlet-class>
     </servlet>
 
     <servlet>
-        <servlet-name>redirectreceiptor</servlet-name>
+        <servlet-name>redirect-forward-receiptor</servlet-name>
         <servlet-class>pers.xiaoming.javaweb.redirect.ForwardReceiptor</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>redirect-include-server</servlet-name>
+        <servlet-class>pers.xiaoming.javaweb.redirect.IncludeServer</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>redirect-include-receiptor</servlet-name>
+        <servlet-class>pers.xiaoming.javaweb.redirect.IncludeReceiptor</servlet-class>
     </servlet>
 
     <servlet-mapping>
@@ -24,13 +34,23 @@
     </servlet-mapping>
 
     <servlet-mapping>
-        <servlet-name>redirectserver</servlet-name>
+        <servlet-name>redirect-forward-server</servlet-name>
         <url-pattern>/httpservlet/redirect/forwardserver</url-pattern>
     </servlet-mapping>
 
     <servlet-mapping>
-        <servlet-name>redirectreceiptor</servlet-name>
+        <servlet-name>redirect-forward-receiptor</servlet-name>
         <url-pattern>/httpservlet/redirect/forwardreceiptor</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>redirect-include-server</servlet-name>
+        <url-pattern>/httpservlet/redirect/includeserver</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>redirect-include-receiptor</servlet-name>
+        <url-pattern>/httpservlet/redirect/includereceiptor</url-pattern>
     </servlet-mapping>
 
     <welcome-file-list>
