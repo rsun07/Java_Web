@@ -15,6 +15,7 @@
 
     <modules>
         <module>servlet-implementation</module>
+        <module>httpservlet</module>
     </modules>
 
     <properties>
