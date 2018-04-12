@@ -1,3 +1,46 @@
-Default home.
+1. hit "/cookie" create cookies
 
-Hello World Java Web!
+
+Response header:
+"
+Content-Length: 0
+Date: Thu, 12 Apr 2018 20:13:08 GMT
+Set-Cookie: root=root_cookie
+Set-Cookie: path=path_cookie; Path=/cookie/cookiepath
+Set-Cookie: version=version_cookie
+Set-Cookie: ttl=ttl_cookie; Max-Age=10; Expires=Thu, 12-Apr-2018 20:13:18 GMT
+"
+
+2. Hit "/cookie/get" within 10 seconds
+Request header:
+"
+Connection: keep-alive
+Cookie: root=root_cookie; version=version_cookie; ttl=ttl_cookie
+Host: localhost:8080
+Upgrade-Insecure-Requests: 1
+"
+
+response:
+"
+root = root_cookie version: 0
+version = version_cookie version: 0
+ttl = ttl_cookie version: 0
+"
+
+3. Hit "/cookie/get" again after 10 seconds
+
+Request header:
+"
+Connection: keep-alive
+Cookie: root=root_cookie; version=version_cookie
+Host: localhost:8080
+Upgrade-Insecure-Requests: 1
+"
+4. hit "/cookie/cookiepath"
+
+"
+path = path_cookie version: 0
+version = version_cookie version: 0
+root = root_cookie version: 0
+version = version_cookie version: 0
+"

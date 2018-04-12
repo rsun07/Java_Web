@@ -5,13 +5,33 @@
 <web-app>
     
     <servlet>
-        <servlet-name>cookie</servlet-name>
-        <servlet-class>pers.xiaoming.javaweb.Server</servlet-class>
+        <servlet-name>cookie-create-server</servlet-name>
+        <servlet-class>pers.xiaoming.javaweb.CreateServer</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>cookie-get-server</servlet-name>
+        <servlet-class>pers.xiaoming.javaweb.GetServer</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>cookie-path-get-server</servlet-name>
+        <servlet-class>pers.xiaoming.javaweb.GetCookieServer</servlet-class>
     </servlet>
     
     <servlet-mapping>
-        <servlet-name>cookie</servlet-name>
+        <servlet-name>cookie-create-server</servlet-name>
         <url-pattern>/cookie</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>cookie-get-server</servlet-name>
+        <url-pattern>/cookie/get</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>cookie-path-get-server</servlet-name>
+        <url-pattern>/cookie/cookiepath</url-pattern>
     </servlet-mapping>
     
     <welcome-file-list>
