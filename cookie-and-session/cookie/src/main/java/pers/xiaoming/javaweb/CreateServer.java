@@ -19,6 +19,7 @@ public class CreateServer extends HttpServlet {
         pathCookie.setPath(req.getContextPath() + "/cookie/cookiepath");
         versionCookie.setVersion(2);
         // ttl in second
+        // cookie expire time won't extend when hit
         ttlCookie.setMaxAge(10);
 
         resp.addCookie(rootCookie);
