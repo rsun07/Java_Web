@@ -15,6 +15,7 @@
 
     <modules>
         <module>cookie</module>
+        <module>session</module>
     </modules>
 
     <properties>
