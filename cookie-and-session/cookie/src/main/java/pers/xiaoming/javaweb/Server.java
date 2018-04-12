@@ -24,5 +24,6 @@ public class Server extends HttpServlet {
         resp.addCookie(rootCookie);
         resp.addCookie(pathCookie);
         resp.addCookie(versionCookie);
+        resp.addCookie(ttlCookie);
     }
 }

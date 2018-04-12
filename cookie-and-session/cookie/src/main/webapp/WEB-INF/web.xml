@@ -3,6 +3,17 @@
  "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
 <web-app>
+    
+    <servlet>
+        <servlet-name>cookie</servlet-name>
+        <servlet-class>pers.xiaoming.javaweb.Server</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>cookie</servlet-name>
+        <url-pattern>/cookie</url-pattern>
+    </servlet-mapping>
+    
     <welcome-file-list>
         <welcome-file>cookie.html</welcome-file>
     </welcome-file-list>
