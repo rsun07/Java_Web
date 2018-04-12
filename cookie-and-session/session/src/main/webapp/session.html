@@ -1,0 +1,64 @@
+1. Normal Session creation and get
+
+1.1 Hit "/session/create？username=myname" endpoint
+
+Request header:
+
+no JSESSIONID
+
+
+Response:
+"
+caller is : test, username is : myuser
+"
+
+Response Header:
+"
+Content-Length →38
+Date →Thu, 12 Apr 2018 21:20:03 GMT
+Set-Cookie →JSESSIONID=057ECEAA14CBAAA6D271B6861C8AC13D; Path=/; HttpOnly
+"
+
+1.2 Hit "/session/get"
+"
+caller is : test, username is : null
+"
+
+2. Disable cookie
+
+2.1 Hit "/session/create?username=myuser" endpoint
+
+Response
+"
+attribute username is : null
+session username is : myname_session
+Session implementation class is, class org.apache.catalina.session.StandardSessionFacade"
+
+Response header
+"
+...
+Set-Cookie
+JSESSIONID=E33D73BFB15E9F20BDB73C887C2035E2; Path=/; HttpOnly...
+"
+
+2.2 Hit "/session/create?username=myuser" endpoint multiple times
+
+Every time get different JSESSIONID in response header
+
+
+2.3  Hit "/session/get"
+
+Response
+"attribute username is : null
+session username is : null
+Session implementation class is, null
+"
+
+
+2.3 hit "localhost:8080/session/get;jsessionid=E33D73BFB15E9F20BDB73C887C2035E2"
+"
+attribute username is : null
+session username is : myuser_session
+Session implementation class is, class org.apache.catalina.session.StandardSessionFacade
+
+"

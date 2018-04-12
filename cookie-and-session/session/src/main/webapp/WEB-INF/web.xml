@@ -11,7 +11,7 @@
 
     <servlet>
         <servlet-name>session-getter</servlet-name>
-        <servlet-class>pers.xiaoming.javaweb.CreateServer</servlet-class>
+        <servlet-class>pers.xiaoming.javaweb.SessionGetServer</servlet-class>
     </servlet>
 
     <servlet-mapping>
