@@ -14,6 +14,11 @@
         <servlet-class>pers.xiaoming.javaweb.SessionGetServer</servlet-class>
     </servlet>
 
+    <servlet>
+        <servlet-name>session-invalidator</servlet-name>
+        <servlet-class>pers.xiaoming.javaweb.SessionInvalidateServer</servlet-class>
+    </servlet>
+
     <servlet-mapping>
         <servlet-name>session-creator</servlet-name>
         <url-pattern>/session/create</url-pattern>
@@ -22,6 +27,11 @@
     <servlet-mapping>
         <servlet-name>session-getter</servlet-name>
         <url-pattern>/session/get</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>session-invalidator</servlet-name>
+        <url-pattern>/session/invalidate</url-pattern>
     </servlet-mapping>
 
     <session-config>
