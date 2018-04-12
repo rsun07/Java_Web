@@ -24,6 +24,10 @@
         <url-pattern>/session/get</url-pattern>
     </servlet-mapping>
 
+    <session-config>
+        <session-timeout>1</session-timeout>
+    </session-config>
+
     <welcome-file-list>
         <welcome-file>session.html</welcome-file>
     </welcome-file-list>
