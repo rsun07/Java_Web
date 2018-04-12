@@ -3,7 +3,27 @@
  "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
 <web-app>
-    
+
+    <servlet>
+        <servlet-name>session-creator</servlet-name>
+        <servlet-class>pers.xiaoming.javaweb.CreateServer</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>session-getter</servlet-name>
+        <servlet-class>pers.xiaoming.javaweb.CreateServer</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>session-creator</servlet-name>
+        <url-pattern>/session/create</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>session-getter</servlet-name>
+        <url-pattern>/session/get</url-pattern>
+    </servlet-mapping>
+
     <welcome-file-list>
         <welcome-file>session.html</welcome-file>
     </welcome-file-list>
