@@ -1,39 +1,48 @@
 package pers.xiaoming.javaweb;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class EventSourceImpl implements EventSource {
-    private Listener listener;
+    private List<Listener> listeners;
+
+    EventSourceImpl() {
+        listeners = new ArrayList<>();
+    }
 
     @Override
     public void setListener(Listener listener) {
-        this.listener = listener;
+        this.listeners.add(listener);
     }
 
     @Override
     public void triggerListener(CURDEvent event) {
-        this.listener.handle(event);
+        for (Listener listener : listeners) {
+            listener.handle(event);
+        }
     }
 
     @Override
     public void save() {
         CURDEvent event = new CURDEventImpl(this, CURDEvent.EventType.CREATE_EVENT);
-        this.listener.handle(event);
+        triggerListener(event);
     }
 
     @Override
     public void modify() {
         CURDEvent event = new CURDEventImpl(this, CURDEvent.EventType.UPDATE_EVENT);
-        this.listener.handle(event);
+        triggerListener(event);
     }
 
     @Override
     public void remove() {
         CURDEvent event = new CURDEventImpl(this, CURDEvent.EventType.DELETE_EVENT);
-        this.listener.handle(event);
+        triggerListener(event);
     }
 
     @Override
     public void find() {
         CURDEvent event = new CURDEventImpl(this, CURDEvent.EventType.RETRIEVE_EVENT);
-        this.listener.handle(event);
+        triggerListener(event);
     }
 }

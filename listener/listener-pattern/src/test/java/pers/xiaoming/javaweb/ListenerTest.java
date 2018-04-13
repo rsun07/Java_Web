@@ -7,13 +7,15 @@ public class ListenerTest {
     public void test() {
 
         // define listener
-        Listener listener = new ListenerImpl();
+        Listener allEventsListener = new AllEventsListener();
+        Listener createEventListener = new CreateEventListener();
 
         // define event source
         EventSource eventSource = new EventSourceImpl();
 
         // register listener
-        eventSource.setListener(listener);
+        eventSource.setListener(allEventsListener);
+        eventSource.setListener(createEventListener);
 
         eventSource.save();
         eventSource.find();
