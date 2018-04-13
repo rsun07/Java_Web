@@ -10,18 +10,13 @@ public class ListenerTest {
         Listener listener = new ListenerImpl();
 
         // define event source
-        Listenerable eventSource = new ListenerableImpl();
+        EventSource eventSource = new EventSourceImpl();
 
         // register listener
         eventSource.setListener(listener);
 
-        // define an event
-        CURDEvent createEvent = new CURDEventImpl(eventSource, "save");
-        CURDEvent retrieveEvent = new CURDEventImpl(eventSource, "find");
-        CURDEvent cannotHandleEvent = new CURDEventImpl(eventSource, "cannot");
-
-        eventSource.triggerListener(createEvent);
-        eventSource.triggerListener(retrieveEvent);
-        eventSource.triggerListener(cannotHandleEvent);
+        eventSource.save();
+        eventSource.find();
+        eventSource.remove();
     }
 }

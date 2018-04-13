@@ -19,7 +19,7 @@ interface CURDEvent {
         }
     }
 
-    Listenerable getEventSource();
+    EventSource getEventSource();
 
     EventType getEventType();
 }

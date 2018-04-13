@@ -2,27 +2,21 @@ package pers.xiaoming.javaweb;
 
 class CURDEventImpl implements CURDEvent {
 
-    private Listenerable eventSource;
-    private String eventName;
+    private EventSource eventSource;
+    private EventType eventType;
 
-    CURDEventImpl(Listenerable eventSource, String eventName) {
+    CURDEventImpl(EventSource eventSource, EventType eventType) {
         this.eventSource = eventSource;
-        this.eventName = eventName;
+        this.eventType = eventType;
     }
 
     @Override
-    public Listenerable getEventSource() {
+    public EventSource getEventSource() {
         return eventSource;
     }
 
     @Override
     public EventType getEventType() {
-        switch (eventName) {
-            case "save" : return EventType.CREATE_EVENT;
-            case "modify" : return EventType.UPDATE_EVENT;
-            case "remove" : return EventType.DELETE_EVENT;
-            case "find" : return EventType.RETRIEVE_EVENT;
-            default : return EventType.CANNOT_HANDLE_EVENT;
-        }
+        return eventType;
     }
 }
