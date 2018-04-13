@@ -74,7 +74,7 @@ Name before invalidate is : myuser
 "
 
 4. Session Redirect
-4.1 Hit "/session/redirect"
+4.1 Hit "/session/redirect?username=myuser"
 302 GET
 200 GET
 redirect to "/session/get"
@@ -82,15 +82,18 @@ redirect to "/session/get"
 
 "
 attribute username is : null
-session username is : null_session
+session username is : myuser_session
 Session implementation class is, class org.apache.catalina.session.StandardSessionFacade
 "
 
 4.2 Session Redirect when cookie is disabled
 
+Hit "/session/redirect?username=myuser"
+
 redirect to "/session/get;jsessionid=CAD2C35C94FE30552191248320392540"
+
 "
 attribute username is : null
-session username is : null_session
+session username is : myuser_session
 Session implementation class is, class org.apache.catalina.session.StandardSessionFacade
 "

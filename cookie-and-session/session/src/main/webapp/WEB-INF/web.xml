@@ -24,6 +24,11 @@
         <servlet-class>pers.xiaoming.javaweb.RedirectServer</servlet-class>
     </servlet>
 
+    <servlet>
+        <servlet-name>session-hyperlink-redirect</servlet-name>
+        <servlet-class>pers.xiaoming.javaweb.HyperlinkRedirectServer</servlet-class>
+    </servlet>
+
     <servlet-mapping>
         <servlet-name>session-creator</servlet-name>
         <url-pattern>/session/create</url-pattern>
@@ -42,6 +47,11 @@
     <servlet-mapping>
         <servlet-name>session-redirect</servlet-name>
         <url-pattern>/session/redirect</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>session-hyperlink-redirect</servlet-name>
+        <url-pattern>/session/hyperlinkredirect</url-pattern>
     </servlet-mapping>
 
     <session-config>
