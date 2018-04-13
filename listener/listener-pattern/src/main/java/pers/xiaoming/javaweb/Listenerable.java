@@ -1,7 +1,7 @@
 package pers.xiaoming.javaweb;
 
 interface Listenerable {
-    void setListener(Listerner listener);
+    void setListener(Listener listener);
 
     void triggerListener(CURDEvent event);
 }

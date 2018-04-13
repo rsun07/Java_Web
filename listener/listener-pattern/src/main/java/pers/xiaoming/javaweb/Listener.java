@@ -1,5 +1,5 @@
 package pers.xiaoming.javaweb;
 
-interface Listerner {
+interface Listener {
     void handle(CURDEvent event);
 }
