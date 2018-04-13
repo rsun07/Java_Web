@@ -5,7 +5,8 @@ interface CURDEvent {
         CREATE_EVENT("create event"),
         UPDATE_EVENT("update event"),
         RETRIEVE_EVENT("retrieve event"),
-        DELEtE_EVENT("delete event");
+        DELETE_EVENT("delete event"),
+        CANNOT_HANDLE_EVENT("Cannot hanle event");
 
         private String name;
 
