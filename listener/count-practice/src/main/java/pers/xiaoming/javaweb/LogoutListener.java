@@ -1,22 +1,35 @@
 package pers.xiaoming.javaweb;
 
 import javax.servlet.ServletContext;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-import java.io.IOException;
+import javax.servlet.http.*;
 import java.util.Map;
 import java.util.Set;
 
-public class LogoutServlet extends HttpServlet {
-    @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        ServletContext context = req.getServletContext();
-        HttpSession session = req.getSession();
+public class LogoutListener implements HttpSessionListener {
 
-        String ip = req.getRemoteAddr();
+    @Override
+    public void sessionCreated(HttpSessionEvent se) {
+
+    }
+
+    /*
+     *  Session cannot get request info
+     *  Without http request info, we cannot get ip
+     *  In this project, we use ip to define a single user.
+     *
+     *  Session cannot get request info but request could get session reference.
+     *  This is because, one session could be used by multi requests.
+     *
+     */
+    @Override
+    public void sessionDestroyed(HttpSessionEvent se) {
+        HttpSession session = se.getSession();
+        ServletContext context = session.getServletContext();
+
+        // session cannot get request
+        // String ip = req.getRemoteAddr();
+
+        String ip = (String) session.getAttribute("ip");
 
         Map<String, Set<HttpSession>> ipToSessionMap = (Map<String, Set<HttpSession>>) context.getAttribute("ips");
 
@@ -41,6 +54,5 @@ public class LogoutServlet extends HttpServlet {
         context.setAttribute("ips", ipToSessionMap);
         String responseInfo = "Current visiting client number is : " + ipToSessionMap.size();
         System.out.println(responseInfo);
-        resp.getWriter().println(responseInfo);
     }
 }

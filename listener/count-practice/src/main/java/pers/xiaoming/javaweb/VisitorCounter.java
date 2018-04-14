@@ -19,14 +19,18 @@ public class VisitorCounter implements ServletRequestListener {
         ServletContext context = request.getServletContext();
         Map<String, Set<HttpSession>> ipToSessionMap = (Map<String, Set<HttpSession>>) context.getAttribute("ips");
 
-        HttpSession currentSession = request.getSession();
+        HttpSession session = request.getSession();
+
+        // this is to resolve session cannot get HttpRequest
+        // then cannot use HttpRequest to getRemoteAddr()
+        session.setAttribute("ip", ip);
 
         if (ipToSessionMap.containsKey(ip)) {
             Set<HttpSession> sessionSet = ipToSessionMap.get(ip);
-            if (!sessionSet.contains(currentSession)) {
+            if (!sessionSet.contains(session)) {
                 // if not contains, means the same ip create a new session
                 // still not count as a new user visit
-                sessionSet.add(currentSession);
+                sessionSet.add(session);
                 ipToSessionMap.put(ip, sessionSet);
             } else {
                 // if contains, do noting
@@ -35,7 +39,7 @@ public class VisitorCounter implements ServletRequestListener {
         } else {
             // new ip
             Set<HttpSession> sessionSet = new HashSet<>();
-            sessionSet.add(currentSession);
+            sessionSet.add(session);
             ipToSessionMap.put(ip, sessionSet);
         }
 
