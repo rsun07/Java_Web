@@ -15,7 +15,7 @@
 
     <modules>
         <module>helloworld</module>
-        <module>lifecycle</module>
+        <module>servlet-lifecycle</module>
         <module>config-and-context</module>
         <module>path</module>
     </modules>
