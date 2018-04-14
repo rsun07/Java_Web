@@ -10,23 +10,10 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>template</artifactId>
+    <artifactId>filter</artifactId>
     <packaging>pom</packaging>
 
     <modules>
-        <module>sub</module>
+        <module>filter-intro</module>
     </modules>
-
-    <properties>
-        <servlet.version>3.1.0</servlet.version>
-    </properties>
-
-    <dependencies>
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>javax.servlet-api</artifactId>
-            <version>${servlet.version}</version>
-            <scope>provided</scope>
-        </dependency>
-    </dependencies>
 </project>
