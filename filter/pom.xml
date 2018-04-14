@@ -10,14 +10,11 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>servlet-intro</artifactId>
+    <artifactId>template</artifactId>
     <packaging>pom</packaging>
 
     <modules>
-        <module>helloworld</module>
-        <module>lifecycle</module>
-        <module>config-and-context</module>
-        <module>path</module>
+        <module>sub</module>
     </modules>
 
     <properties>
