@@ -15,6 +15,7 @@
 
     <modules>
         <module>listener-pattern</module>
+        <module>count-practice</module>
     </modules>
 
     <properties>
