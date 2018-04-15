@@ -11,7 +11,9 @@
     <title>Log in</title>
 </head>
 <body>
-    Please log in <br>
-
+    <%
+        session.setAttribute("user", "myuser");
+    %>
+    Log in successful!
 </body>
 </html>

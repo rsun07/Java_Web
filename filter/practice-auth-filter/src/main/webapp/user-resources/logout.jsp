@@ -11,6 +11,9 @@
     <title>Logout</title>
 </head>
 <body>
-    Logout <br>
+    <%
+        session.invalidate();
+    %>
+    Logout Successful
 </body>
 </html>
