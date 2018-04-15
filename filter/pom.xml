@@ -16,5 +16,6 @@
     <modules>
         <module>filter-lifecycle</module>
         <module>filter-config-and-context</module>
+        <module>filter-dispatcher</module>
     </modules>
 </project>

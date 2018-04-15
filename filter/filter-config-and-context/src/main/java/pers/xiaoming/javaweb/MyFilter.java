@@ -29,12 +29,15 @@ public class MyFilter implements Filter {
             System.out.println("Filter Init Param, name is " + name + ", value is " + value);
         }
 
-        context.setAttribute("filter_attr", "set_by_filter");
+        context.setAttribute("filter_attr", "context_filter_attr");
+        request.setAttribute("filter_attr", "request_filter_attr");
         chain.doFilter(request, response);
 
         System.out.println("\n\nBack to Filter:");
-        String setByServlet = (String) context.getAttribute("servlet_attr");
-        System.out.println("Servlet set attribute, servlet_attr : " + setByServlet);
+        String contextAttr = (String) context.getAttribute("servlet_attr");
+        String requestAttr = (String) request.getAttribute("servlet_attr");
+        System.out.println("Servlet context attribute, servlet_attr : " + contextAttr);
+        System.out.println("Servlet request attribute, servlet_attr : " + requestAttr);
     }
 
     @Override

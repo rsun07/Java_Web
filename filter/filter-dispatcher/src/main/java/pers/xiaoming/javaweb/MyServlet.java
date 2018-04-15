@@ -18,12 +18,9 @@ public class MyServlet extends HttpServlet {
         String contextNamespace = context.getInitParameter("namespace");
         System.out.println("Context Init param, namespace : " + contextNamespace);
 
-        String contextAttr = (String) context.getAttribute("filter_attr");
-        String requestAttr = (String) request.getAttribute("filter_attr");
-        System.out.println("Filter context attribute, servlet_attr : " + contextAttr);
-        System.out.println("Filter request attribute, servlet_attr : " + requestAttr);
+        String setByFilter = (String) context.getAttribute("filter_attr");
+        System.out.println("Filter set attribute, servlet_attr : " + setByFilter);
 
-        context.setAttribute("servlet_attr", "servlet_context_attr");
-        request.setAttribute("servlet_attr", "servlet_request_attr");
+        context.setAttribute("servlet_attr", "set_by_servlet");
     }
 }
