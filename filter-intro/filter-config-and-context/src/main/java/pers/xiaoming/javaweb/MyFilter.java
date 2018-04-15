@@ -2,29 +2,37 @@ package pers.xiaoming.javaweb;
 
 import javax.servlet.*;
 import java.io.IOException;
+import java.util.Enumeration;
 
 public class MyFilter implements Filter {
 
-    public MyFilter() {
-        System.out.println("Constructing My Filter");
-    }
+    private FilterConfig config;
 
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
-        System.out.println("Initialize My Filter");
+        this.config = filterConfig;
     }
 
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-        System.out.println("Do Filter before filter chain");
+        ServletContext context = request.getServletContext();
 
-        // this doFilter() method is from FilterChain rather than Filter
+        String contextNamespace = (String) context.getAttribute("namespace");
+        System.out.println("In Filter, Context Init param, namespace : " + contextNamespace);
+
+        Enumeration<String> params = config.getInitParameterNames();
+        while (params.hasMoreElements()) {
+            System.out.println("Filter Init Param : " + params.nextElement());
+        }
+
+        context.setAttribute("filter_attr", "set_by_filter");
         chain.doFilter(request, response);
-        System.out.println("Do Filter after filter chain");
+
+        String setByServlet = (String) context.getAttribute("servlet_attr");
+        System.out.println("Servlet set attribute, servlet_attr : " + contextNamespace);
     }
 
     @Override
     public void destroy() {
-        System.out.println("Destroy My Filter");
     }
 }
