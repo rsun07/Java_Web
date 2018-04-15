@@ -1,4 +1,6 @@
 1. Hit "/filter/forward"
+
+Console:
 "
 Executing My Filter
 Executing Forward Filter
@@ -8,7 +10,12 @@ Executing Forward Filter again
 Executing Forward Filter again
 "
 
+Response:
+"	Executing My Filter		Executing Forward Filter		Executing Forward Servlet		Executing Forward Receiptor		Executing Forward Filter again		Executing Forward Filter again	"
+
+
 2. Hit "/filter/include"
+Console:
 "
 Executing My Filter
 Executing Include Filter
@@ -17,3 +24,25 @@ Executing Include Receiptor
 Executing Include Filter again
 Executing Forward Filter again
 "
+
+Response:
+"
+Executing My Filter		Executing Include Filter		Executing Include Servlet		Executing Include Receiptor		Executing Include Filter again		Executing Forward Filter again
+"
+
+3 Hit "/filter/redirect"
+
+Console:
+"
+Executing My Filter
+Executing Redirect Filter
+Executing Redirect Servlet
+Executing Redirect Filter again
+Executing Forward Filter again
+Executing My Filter
+Executing Redirect Receiptor
+Executing Forward Filter again
+"
+
+Response:
+"	Executing My Filter		Executing Redirect Receiptor		Executing Forward Filter again	"
