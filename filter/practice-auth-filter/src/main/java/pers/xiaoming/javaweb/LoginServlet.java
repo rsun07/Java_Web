@@ -20,17 +20,24 @@ public class LoginServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String username = req.getParameter("user");
+
+        boolean isLoggedIn = false;
+        String username = req.getParameter("uname");
 
         if (username != null && userDao.containsKey(username)) {
-            String password = req.getParameter("password");
+            String password = req.getParameter("pword");
             if (userDao.get(username).equals(password)) {
+                isLoggedIn = true;
+
                 HttpSession session = req.getSession();
-                session.setAttribute(username, password);
+                session.setAttribute("user", username);
                 resp.sendRedirect("/user/welcome.jsp");
             }
         }
-        resp.getWriter().write("Log in fail, please try again");
-        resp.sendRedirect( "/login.jsp");
+
+        if (!isLoggedIn) {
+            resp.getWriter().write("Log in fail, please try again");
+            resp.sendRedirect("/login.jsp");
+        }
     }
 }
