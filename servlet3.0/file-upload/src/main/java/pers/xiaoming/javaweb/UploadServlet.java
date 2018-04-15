@@ -18,7 +18,7 @@ public class UploadServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String path = this.getServletContext().getRealPath("/file-storage");
 
-        Part part = req.getPart("uploaded-file");
+        Part part = req.getPart("myfile");
 
         // set file dir and name
         part.write(path + "file.txt");
