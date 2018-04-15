@@ -3,37 +3,75 @@
  "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
 <web-app>
-    <context-param>
-        <param-name>namespace</param-name>
-        <param-value>context-namespace</param-value>
-    </context-param>
-    <context-param>
-        <param-name>servlet-context</param-name>
-        <param-value>servlet-context-value</param-value>
-    </context-param>
-
     <filter>
         <filter-name>myfilter</filter-name>
         <filter-class>pers.xiaoming.javaweb.MyFilter</filter-class>
-        <init-param>
-            <param-name>namespace</param-name>
-            <param-value>filter-namespace</param-value>
-        </init-param>
+    </filter>
+
+    <filter>
+        <filter-name>forward-filter</filter-name>
+        <filter-class>pers.xiaoming.javaweb.ForwardFilter</filter-class>
+    </filter>
+
+    <filter>
+        <filter-name>include-filter</filter-name>
+        <filter-class>pers.xiaoming.javaweb.IncludeFilter</filter-class>
     </filter>
 
     <filter-mapping>
         <filter-name>myfilter</filter-name>
-        <servlet-name>myservlet</servlet-name>
+        <url-pattern>/filter/*</url-pattern>
     </filter-mapping>
 
+    <filter-mapping>
+        <filter-name>forward-filter</filter-name>
+        <servlet-name>forward-servlet</servlet-name>
+    </filter-mapping>
+
+    <filter-mapping>
+        <filter-name>include-filter</filter-name>
+        <servlet-name>include-servlet</servlet-name>
+    </filter-mapping>
+
+
     <servlet>
-        <servlet-name>myservlet</servlet-name>
-        <servlet-class>pers.xiaoming.javaweb.MyServlet</servlet-class>
+        <servlet-name>forward-servlet</servlet-name>
+        <servlet-class>pers.xiaoming.javaweb.ForwardServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>myservlet</servlet-name>
-        <url-pattern>/filter/config</url-pattern>
+        <servlet-name>forward-servlet</servlet-name>
+        <url-pattern>/filter/forward</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>include-servlet</servlet-name>
+        <servlet-class>pers.xiaoming.javaweb.IncludeServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>include-servlet</servlet-name>
+        <url-pattern>/filter/include</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>forward-receiptor</servlet-name>
+        <servlet-class>pers.xiaoming.javaweb.ForwardReceiptor</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>forward-receiptor</servlet-name>
+        <url-pattern>/filter/forward/redirect</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>include-receiptor</servlet-name>
+        <servlet-class>pers.xiaoming.javaweb.IncludeReceiptor</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>include-receiptor</servlet-name>
+        <url-pattern>/filter/include/redirect</url-pattern>
     </servlet-mapping>
 
 

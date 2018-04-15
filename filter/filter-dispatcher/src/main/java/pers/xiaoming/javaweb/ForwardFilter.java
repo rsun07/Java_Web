@@ -2,11 +2,10 @@ package pers.xiaoming.javaweb;
 
 import javax.servlet.*;
 import java.io.IOException;
-import java.util.Enumeration;
 
-public class MyFilter implements Filter {
+public class ForwardFilter implements Filter {
 
-    private static final String MSG = "\tExecuting My Filter\t";
+    private static final String MSG = "\tExecuting Forward Filter\t";
     private static final String MSG2 = "\tExecuting Forward Filter again\t";
 
     @Override
