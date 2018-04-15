@@ -7,7 +7,7 @@ import java.util.Enumeration;
 public class MyFilter implements Filter {
 
     private static final String MSG = "\tExecuting My Filter\t";
-    private static final String MSG2 = "\tExecuting Forward Filter again\t";
+    private static final String MSG2 = "\tExecuting My Filter again\t";
 
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
