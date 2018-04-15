@@ -4,12 +4,13 @@ import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
 import java.io.IOException;
 
-@WebFilter(filterName = "myfilter",
-           urlPatterns = {"/annotation/my/*", "/annotation/myservlet"})
-public class MyFilter implements Filter {
+@WebFilter(filterName = "redirect-filter",
+           servletNames = {"redirect-servlet", "myservlet"},
+           dispatcherTypes = {DispatcherType.FORWARD, DispatcherType.INCLUDE})
 
-    private static final String MESSAGE = "\tExecuting my filter\t";
-    private static final String MESSAGE_AGAIN = "\tExecuting my filter AGAIN\t";
+public class RedirectFilter implements Filter {
+    private static final String MESSAGE = "\tExecuting redirect filter\t";
+    private static final String MESSAGE_AGAIN = "\tExecuting redirect filter AGAIN\t";
 
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
