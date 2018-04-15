@@ -1,0 +1,56 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+
+    <context-param>
+        <param-name>namespace</param-name>
+        <param-value>all servlet shared context param</param-value>
+    </context-param>
+    <context-param>
+        <param-name>servlet-context</param-name>
+        <param-value>servlet-context-value</param-value>
+    </context-param>
+
+    <!--Register Servlet life cycle-->
+    <servlet>
+        <servlet-name>servlet1</servlet-name>
+        <servlet-class>pers.xiaoming.javaweb.Servlet1</servlet-class>
+        <init-param>
+            <param-name>namespace</param-name>
+            <param-value>servlet1-config</param-value>
+        </init-param>
+        <init-param>
+            <param-name>address</param-name>
+            <param-value>servlet1-java-web</param-value>
+        </init-param>
+    </servlet>
+
+    <servlet>
+        <servlet-name>servlet2</servlet-name>
+        <servlet-class>pers.xiaoming.javaweb.Servlet2</servlet-class>
+        <init-param>
+            <param-name>namespace</param-name>
+            <param-value>servlet2-config</param-value>
+        </init-param>
+        <init-param>
+            <param-name>address</param-name>
+            <param-value>servlet2-java-web</param-value>
+        </init-param>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>servlet1</servlet-name>
+        <url-pattern>/servlet1</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>servlet2</servlet-name>
+        <url-pattern>/servlet2</url-pattern>
+    </servlet-mapping>
+
+    <welcome-file-list>
+        <welcome-file>config_and_context.html</welcome-file>
+    </welcome-file-list>
+</web-app>
