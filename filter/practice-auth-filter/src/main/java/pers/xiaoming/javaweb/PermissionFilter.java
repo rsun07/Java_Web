@@ -28,7 +28,7 @@ public class PermissionFilter implements Filter {
                 }
             }
             // session == null or (session != null && user == null) means has not logged in yet
-            req.getRequestDispatcher("/login").forward(request, response);
+            req.getRequestDispatcher("/login.jsp").forward(request, response);
         } else {
             // path not start with /user could be view without log in
             chain.doFilter(request, response);

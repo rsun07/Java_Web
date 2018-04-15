@@ -11,9 +11,10 @@
     <title>Log in</title>
 </head>
 <body>
-    <%
-        session.setAttribute("user", "myuser");
-    %>
-    Log in successful!
+    <form action="${pageContext.request.contextPath}/loginServlet" method="post">
+        User Name : <input type="text" name="username"/> <br>
+        Password : <input type="password" password="password"/> <br>
+        <input type="submit" value="Log In">
+    </form>
 </body>
 </html>
