@@ -14,7 +14,7 @@
         <module>servlet-core</module>
         <module>cookie-and-session</module>
         <module>listener</module>
-        <module>filter-intro</module>
+        <module>filter</module>
     </modules>
 
     <properties>
