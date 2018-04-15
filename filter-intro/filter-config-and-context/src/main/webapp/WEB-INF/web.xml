@@ -6,51 +6,47 @@
 
     <context-param>
         <param-name>namespace</param-name>
-        <param-value>all servlet shared context param</param-value>
+        <param-value>context-namespace</param-value>
     </context-param>
     <context-param>
         <param-name>servlet-context</param-name>
         <param-value>servlet-context-value</param-value>
     </context-param>
 
-    <!--Register Servlet life cycle-->
-    <servlet>
-        <servlet-name>servlet1</servlet-name>
-        <servlet-class>pers.xiaoming.javaweb.Servlet1</servlet-class>
+    <filter>
+        <filter-name>myfilter</filter-name>
+        <filter-class>pers.xiaoming.javaweb.MyFilter</filter-class>
         <init-param>
             <param-name>namespace</param-name>
-            <param-value>servlet1-config</param-value>
+            <param-value>filter-namespace</param-value>
         </init-param>
-        <init-param>
-            <param-name>address</param-name>
-            <param-value>servlet1-java-web</param-value>
-        </init-param>
-    </servlet>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>myfilter</filter-name>
+        <servlet-name>myservlet</servlet-name>
+    </filter-mapping>
 
     <servlet>
-        <servlet-name>servlet2</servlet-name>
-        <servlet-class>pers.xiaoming.javaweb.Servlet2</servlet-class>
+        <servlet-name>myservlet</servlet-name>
+        <servlet-class>pers.xiaoming.javaweb.MyServlet</servlet-class>
         <init-param>
             <param-name>namespace</param-name>
-            <param-value>servlet2-config</param-value>
+            <param-value>servlet-config</param-value>
         </init-param>
         <init-param>
             <param-name>address</param-name>
-            <param-value>servlet2-java-web</param-value>
+            <param-value>servlet-java-web</param-value>
         </init-param>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>servlet1</servlet-name>
-        <url-pattern>/servlet1</url-pattern>
+        <servlet-name>myservlet</servlet-name>
+        <url-pattern>/filter/config</url-pattern>
     </servlet-mapping>
 
-    <servlet-mapping>
-        <servlet-name>servlet2</servlet-name>
-        <url-pattern>/servlet2</url-pattern>
-    </servlet-mapping>
 
     <welcome-file-list>
-        <welcome-file>config_and_context.html</welcome-file>
+        <welcome-file>filter-config_and_context.html</welcome-file>
     </welcome-file-list>
 </web-app>
