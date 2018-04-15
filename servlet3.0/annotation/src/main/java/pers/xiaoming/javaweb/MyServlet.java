@@ -16,6 +16,7 @@ import java.io.IOException;
 
 public class MyServlet extends HttpServlet {
     private static final String MESSAGE = "\tExecuting my servlet\t";
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         System.out.println(MESSAGE);
