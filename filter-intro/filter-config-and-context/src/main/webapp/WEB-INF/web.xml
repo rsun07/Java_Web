@@ -3,7 +3,6 @@
  "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
 <web-app>
-
     <context-param>
         <param-name>namespace</param-name>
         <param-value>context-namespace</param-value>
@@ -30,14 +29,6 @@
     <servlet>
         <servlet-name>myservlet</servlet-name>
         <servlet-class>pers.xiaoming.javaweb.MyServlet</servlet-class>
-        <init-param>
-            <param-name>namespace</param-name>
-            <param-value>servlet-config</param-value>
-        </init-param>
-        <init-param>
-            <param-name>address</param-name>
-            <param-value>servlet-java-web</param-value>
-        </init-param>
     </servlet>
 
     <servlet-mapping>

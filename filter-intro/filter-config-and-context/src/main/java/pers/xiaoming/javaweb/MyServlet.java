@@ -11,10 +11,12 @@ import java.util.Enumeration;
 public class MyServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        System.out.println("\n\nRunning Servlet:");
+
         ServletContext context = request.getServletContext();
 
-        String contextNamespace = (String) context.getAttribute("namespace");
-        System.out.println("In Servlet, Context Init param, namespace : " + contextNamespace);
+        String contextNamespace = context.getInitParameter("namespace");
+        System.out.println("Context Init param, namespace : " + contextNamespace);
 
         String setByFilter = (String) context.getAttribute("filter_attr");
         System.out.println("Filter set attribute, servlet_attr : " + setByFilter);

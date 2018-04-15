@@ -15,21 +15,26 @@ public class MyFilter implements Filter {
 
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
+        System.out.println("\n\nRunning Filter:");
+
         ServletContext context = request.getServletContext();
 
-        String contextNamespace = (String) context.getAttribute("namespace");
-        System.out.println("In Filter, Context Init param, namespace : " + contextNamespace);
+        String contextNamespace = context.getInitParameter("namespace");
+        System.out.println("Context Init param, namespace : " + contextNamespace);
 
         Enumeration<String> params = config.getInitParameterNames();
         while (params.hasMoreElements()) {
-            System.out.println("Filter Init Param : " + params.nextElement());
+            String name = params.nextElement();
+            String value = config.getInitParameter(name);
+            System.out.println("Filter Init Param, name is " + name + ", value is " + value);
         }
 
         context.setAttribute("filter_attr", "set_by_filter");
         chain.doFilter(request, response);
 
+        System.out.println("\n\nBack to Filter:");
         String setByServlet = (String) context.getAttribute("servlet_attr");
-        System.out.println("Servlet set attribute, servlet_attr : " + contextNamespace);
+        System.out.println("Servlet set attribute, servlet_attr : " + setByServlet);
     }
 
     @Override
