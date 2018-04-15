@@ -9,7 +9,6 @@
         <filter-class>pers.xiaoming.javaweb.MyFilter</filter-class>
     </filter>
 
-
     <filter>
         <filter-name>nochainfilter</filter-name>
         <filter-class>pers.xiaoming.javaweb.NoChainFilter</filter-class>
@@ -35,9 +34,15 @@
         <filter-name>myservletfilter</filter-name>
         <servlet-name>myservlet</servlet-name>
     </filter-mapping>
-    
+
+
     <servlet>
         <servlet-name>myservlet</servlet-name>
+        <servlet-class>pers.xiaoming.javaweb.MyServlet</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>nochain-servlet</servlet-name>
         <servlet-class>pers.xiaoming.javaweb.MyServlet</servlet-class>
     </servlet>
     
@@ -47,8 +52,8 @@
     </servlet-mapping>
 
     <servlet-mapping>
-        <servlet-name>myservlet</servlet-name>
-        <url-pattern>/filter/nochian</url-pattern>
+        <servlet-name>nochain-servlet</servlet-name>
+        <url-pattern>/filter/nochain</url-pattern>
     </servlet-mapping>
 
     <welcome-file-list>

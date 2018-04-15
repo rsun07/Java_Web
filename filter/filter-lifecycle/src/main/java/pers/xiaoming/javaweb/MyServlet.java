@@ -8,7 +8,10 @@ import java.io.IOException;
 
 public class MyServlet extends HttpServlet {
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         System.out.println("Running doGet() in MyServlet");
+
+        response.setContentType("text/html;charset=UTF-8");
+        response.getWriter().write("Servlet Response");
     }
 }
