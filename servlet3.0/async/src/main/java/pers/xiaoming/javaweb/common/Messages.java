@@ -1,4 +1,4 @@
-package pers.xiaoming.javaweb;
+package pers.xiaoming.javaweb.common;
 
 import java.io.PrintWriter;
 

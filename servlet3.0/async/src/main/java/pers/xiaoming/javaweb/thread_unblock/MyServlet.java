@@ -1,6 +1,6 @@
 package pers.xiaoming.javaweb.thread_unblock;
 
-import pers.xiaoming.javaweb.Messages;
+import pers.xiaoming.javaweb.common.Messages;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
