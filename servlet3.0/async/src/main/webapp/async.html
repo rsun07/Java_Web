@@ -2,7 +2,7 @@
 
 hit "/async/thread_unblock"
 
-console:
+Console:
 "
 Main Thread start!
 Main Thread completed!
@@ -13,8 +13,34 @@ i = 2
 Background Thread completed!
 "
 
+
 Response:
 "
 Main Thread start!
 Main Thread completed!
+"
+
+
+2. async context complete
+
+Console:
+"
+Main Thread start!
+Main Thread completed!
+Background Thread start!
+i = 0
+i = 1
+i = 2
+Background Thread completed!
+after async context complete, won't show up in response
+"
+
+
+Response:
+"
+Main Thread start!
+Main Thread completed!
+Background Thread start!
+sum = 3
+Background Thread completed!
 "
