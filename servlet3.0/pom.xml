@@ -16,5 +16,6 @@
     <modules>
         <module>annotation</module>
         <module>file-upload</module>
+        <module>async</module>
     </modules>
 </project>
