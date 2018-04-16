@@ -22,6 +22,8 @@ public class MyContextListener implements ServletContextListener {
 
         regMyFilterForServlet(context, Config.MYFILTER_FOR_SERVLET);
         regMyFilterURLPattern(context, Config.MYFILTER_URL_PATTERN);
+
+        regMyRequestListener(context, Config.MY_REQUEST_LISTENER);
     }
 
     private void regMyServlet(ServletContext context, Config config) {
@@ -63,6 +65,10 @@ public class MyContextListener implements ServletContextListener {
         // false means not after, so although MyFilterForServlet is registered before
         // but MyFilterURLPattern will execute first
         frd.addMappingForUrlPatterns(EnumSet.of(DispatcherType.REQUEST), false, Config.MYSERVLET.getUrlPattern());
+    }
+
+    private void regMyRequestListener(ServletContext context, Config config) {
+        context.addListener(config.getClassPath());
     }
 
     @Override

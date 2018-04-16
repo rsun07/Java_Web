@@ -4,7 +4,8 @@ enum Config {
     MYSERVLET("MyServlet"),
     MYSERVLET_WITH_CONFIG("MyServletWithConfig"),
     MYFILTER_FOR_SERVLET("MyFilterForServlet"),
-    MYFILTER_URL_PATTERN("MyFilterURLPattern");
+    MYFILTER_URL_PATTERN("MyFilterURLPattern"),
+    MY_REQUEST_LISTENER("MyRequestListener");
 
 
     private static final String CLASS_PATH = "pers.xiaoming.javaweb.";
