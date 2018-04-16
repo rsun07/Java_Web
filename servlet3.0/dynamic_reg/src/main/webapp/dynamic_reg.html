@@ -1,12 +1,22 @@
-
+1. Hit "/dynamic/myservlet"
 
 Console:
 "
 Executing context listener
-[2018-04-15 11:02:48,726] Artifact dynamic_reg:war: Artifact is deployed successfully
-[2018-04-15 11:02:48,727] Artifact dynamic_reg:war: Deploy took 475 milliseconds
+Executing My Filter for URL Pattern
+Executing My Filter for servlet
 Successfully register servlet!
-Init param, Key: namespace; Value: dynamic_namespace
-Init param, Key: key; Value: value
-Init param, Key: inti_params; Value: inti_params
+This: Init param, Key: namespace; Value: dynamic_namespace
+Executing My Filter for servlet
+Executing My Filter for URL Pattern
+"
+
+
+2. Hit "Hit "/dynamic/myservletwithconfig"
+
+Console:
+"
+Successfully register servlet!
+With Config: Init param, Key: key; Value: value
+With Config: Init param, Key: inti_params; Value: inti_params
 "

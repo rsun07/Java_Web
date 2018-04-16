@@ -1,9 +1,10 @@
 package pers.xiaoming.javaweb;
 
-enum Configs {
+enum Config {
     MYSERVLET("MyServlet"),
-    MYSERVLET_WITH_CONFIG("MyServletWithConfig");
-    ;
+    MYSERVLET_WITH_CONFIG("MyServletWithConfig"),
+    MYFILTER_FOR_SERVLET("MyFilterForServlet"),
+    MYFILTER_URL_PATTERN("MyFilterURLPattern");
 
 
     private static final String CLASS_PATH = "pers.xiaoming.javaweb.";
@@ -13,7 +14,7 @@ enum Configs {
     private String classPath;
     private String urlPattern;
 
-    Configs(String name) {
+    Config(String name) {
         this.name = name;
         this.classPath = CLASS_PATH + name;
         this.urlPattern = URL_PATH + name.toLowerCase();
