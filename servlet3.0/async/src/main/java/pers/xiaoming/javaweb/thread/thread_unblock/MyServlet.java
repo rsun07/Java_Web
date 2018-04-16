@@ -1,4 +1,4 @@
-package pers.xiaoming.javaweb.thread_unblock;
+package pers.xiaoming.javaweb.thread.thread_unblock;
 
 import pers.xiaoming.javaweb.common.Messages;
 
@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet("/async/thread_unblock")
+@WebServlet("/async/thread/unblock")
 public class MyServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
