@@ -15,8 +15,8 @@ public class CalculateThread implements Runnable {
     @Override
     public void run() {
         try {
-            System.out.println(Messages.BACKGROUND_THREAD_START);
-            out.println(Messages.BACKGROUND_THREAD_START);
+            Messages.BACKGROUND_THREAD_START.print(out);
+
             int sum = 0;
             for (int i = 0; i < 3; i++) {
                 System.out.println("i = " + i);
@@ -25,8 +25,8 @@ public class CalculateThread implements Runnable {
             }
             out.println("sum = " + sum);
 
-            System.out.println(Messages.BACKGROUND_THREAD_COMPLETE);
-            out.println(Messages.BACKGROUND_THREAD_COMPLETE);
+            Messages.BACKGROUND_THREAD_COMPLETE.print(out);
+
         } catch (Exception e) {
             // do nothing
             e.printStackTrace();
