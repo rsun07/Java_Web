@@ -9,8 +9,6 @@ import java.util.Map;
 // otherwise there is no start point for this program
 @WebListener
 public class MyContextListener implements ServletContextListener {
-    private static final String SERVLET_NAME = "MyServlet";
-    private static final String SERVLET_CLASS = "pers.xiaoming.javaweb.MyServlet";
 
     @Override
     public void contextInitialized(ServletContextEvent sce) {
@@ -20,19 +18,25 @@ public class MyContextListener implements ServletContextListener {
 
         // dynamic register Servlet
         // in real practice, normally read from config file
-        ServletRegistration.Dynamic srd = context.addServlet(SERVLET_NAME, SERVLET_CLASS);
+        ServletRegistration.Dynamic srd = context.addServlet(Configs.MYSERVLET.getName(), Configs.MYSERVLET.getClassPath());
 
         // add dynamic inti params
         srd.setInitParameter("namespace", "dynamic_namespace");
+
+        // assign url-pattern for Servlet
+        srd.addMapping(Configs.MYSERVLET.getUrlPattern());
+
+
+        // register another servlet
+        srd = context.addServlet(Configs.MYSERVLET_WITH_CONFIG.getName(), Configs.MYSERVLET_WITH_CONFIG.getClassPath());
 
         Map<String, String> params = new HashMap<>();
         params.put("key", "value");
         params.put("inti_params", "inti_params");
         srd.setInitParameters(params);
+        srd.setInitParameters(params);
 
-
-        // assign url-pattern for Servlet
-        srd.addMapping("/dynamic/servlet");
+        srd.addMapping(Configs.MYSERVLET_WITH_CONFIG.getUrlPattern());
     }
 
     @Override
