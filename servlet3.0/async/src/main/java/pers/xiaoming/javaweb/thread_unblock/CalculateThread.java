@@ -18,7 +18,7 @@ public class CalculateThread implements Runnable {
             System.out.println(Messages.BACKGROUND_THREAD_START);
             out.println(Messages.BACKGROUND_THREAD_START);
             int sum = 0;
-            for (int i = 0; i < 10; i++) {
+            for (int i = 0; i < 3; i++) {
                 System.out.println("i = " + i);
                 sum += i;
                 Thread.sleep(500);
