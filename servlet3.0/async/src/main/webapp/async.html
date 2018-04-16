@@ -32,6 +32,7 @@ i = 0
 i = 1
 i = 2
 Background Thread completed!
+servlet request destroy
 after async context complete, won't show up in response
 "
 
@@ -43,4 +44,56 @@ Main Thread completed!
 Background Thread start!
 sum = 3
 Background Thread completed!
+"
+
+
+3. async context timeout
+
+Hit "/async/context/timeout"
+
+Console:
+"
+Main Thread start!
+Main Thread completed!
+Background Thread start!
+i = 0
+i = 1
+i = 2
+Background Thread completed!
+servlet request destroy
+"
+
+Response:
+"
+Main Thread start!
+Main Thread completed!
+Background Thread start!
+"
+
+Refresh the page:
+
+Console:
+
+"
+Main Thread start!
+Main Thread completed!
+Background Thread start!
+i = 0
+i = 1
+i = 2
+servlet request destroy
+Background Thread completed!
+"
+
+
+It has the result from the previous response that write into the response output Stream
+but haven't show up before last main thread completed
+
+Response:
+"
+sum = 3
+Background Thread completed!
+Main Thread start!
+Main Thread completed!
+Background Thread start!
 "

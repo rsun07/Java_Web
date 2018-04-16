@@ -9,12 +9,18 @@ public enum Messages {
     BACKGROUND_THREAD_START("Background Thread start!"),
     BACKGROUND_THREAD_COMPLETE("Background Thread completed!"),
 
-    BACKGROUND_THREAD_AFTER_COMPLETE("after async context complete, won't show up in response");
+    BACKGROUND_THREAD_AFTER_COMPLETE("after async context complete, won't show up in response"),
+
+    SERVLET_REQUEST_DESTROY("servlet request destroy");
 
     private String message;
 
     Messages(String message) {
         this.message = message;
+    }
+
+    public void print() {
+        System.out.println(this.message);
     }
 
     public void print(PrintWriter out) {

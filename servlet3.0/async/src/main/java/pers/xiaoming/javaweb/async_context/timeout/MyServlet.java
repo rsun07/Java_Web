@@ -31,9 +31,4 @@ public class MyServlet extends HttpServlet {
 
         Messages.MAIN_THREAD_COMPLETE.print(out);
     }
-
-    @Override
-    public void destroy() {
-        super.destroy();
-    }
 }
