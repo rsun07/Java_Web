@@ -149,3 +149,37 @@ Response:
 Main Thread start! Main Thread completed! Background Thread start! sum = 3 Background Thread completed! Dispatch page
 "
 
+
+6. async context async using session to store value
+
+Hit ""
+
+Console:
+
+"
+Main Thread start!
+Main Thread completed!
+Background Thread start!
+i = 0
+Result servlet, trying to get from session!
+Result servlet, fail to get sum
+i = 1
+Result servlet, trying to get from session!
+Result servlet, fail to get sum
+i = 2
+Result servlet, trying to get from session!
+Result servlet, fail to get sum
+Background Thread completed!
+Result servlet, trying to get from session!
+Successfully get Result
+servlet request destroy
+"
+
+Response:
+
+"
+Main Thread start!
+Main Thread completed!
+Successfully get Result
+sum = 3
+"

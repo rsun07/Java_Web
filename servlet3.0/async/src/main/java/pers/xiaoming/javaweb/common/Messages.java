@@ -11,7 +11,11 @@ public enum Messages {
 
     BACKGROUND_THREAD_AFTER_COMPLETE("after async context complete, won't show up in response"),
 
-    SERVLET_REQUEST_DESTROY("servlet request destroy");
+    SERVLET_REQUEST_DESTROY("servlet request destroy"),
+
+    RESULT_SERVLET_TRY("Result servlet, trying to get from session!"),
+    RESULT_SERVLET_TRY_FAIL("Result servlet, fail to get sum"),
+    RESULT_SERVLET_GET_RESULT("Successfully get Result");
 
     private String message;
 
