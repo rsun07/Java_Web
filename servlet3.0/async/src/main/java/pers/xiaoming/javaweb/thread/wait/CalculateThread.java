@@ -1,4 +1,4 @@
-package pers.xiaoming.javaweb.thread.thread_unblock;
+package pers.xiaoming.javaweb.thread.wait;
 
 import pers.xiaoming.javaweb.common.Calculator;
 

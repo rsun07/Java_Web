@@ -20,8 +20,35 @@ Main Thread start!
 Main Thread completed!
 "
 
+2. thread wait
+
+Hit "/async/thread/wait"
+
+Console:
+"
+Main Thread start!
+Background Thread start!
+i = 0
+i = 1
+i = 2
+Background Thread completed!
+Main Thread completed!
+"
+
+
+Browser wait, block while calculating
+Response:
+"
+Main Thread start!
+Background Thread start!
+sum = 3
+Background Thread completed!
+Main Thread completed!
+"
 
 3. async context complete
+
+Attention for the "Main Thread completed!" position comparing to (2. thread wait)
 
 Console:
 "
