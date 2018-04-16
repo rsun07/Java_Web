@@ -8,7 +8,7 @@ public class CalculateThread implements Runnable {
 
     private PrintWriter out;
 
-    public CalculateThread(PrintWriter out) {
+    CalculateThread(PrintWriter out) {
         this.out = out;
     }
 

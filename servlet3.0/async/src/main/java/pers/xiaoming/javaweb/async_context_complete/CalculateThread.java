@@ -9,7 +9,7 @@ public class CalculateThread implements Runnable {
 
     private AsyncContext asyncContext;
 
-    public CalculateThread(AsyncContext asyncContext) {
+    CalculateThread(AsyncContext asyncContext) {
         this.asyncContext = asyncContext;
     }
 
