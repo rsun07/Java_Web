@@ -17,5 +17,6 @@
         <module>annotation</module>
         <module>file-upload</module>
         <module>async</module>
+        <module>dynamic_reg</module>
     </modules>
 </project>
