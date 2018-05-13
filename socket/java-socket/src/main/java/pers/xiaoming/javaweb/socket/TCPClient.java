@@ -26,16 +26,15 @@ public class TCPClient implements AutoCloseable {
         try {
             // 2. Get OutputStream from socket to communicate with Server
             OutputStream out = socket.getOutputStream();
-            PrintWriter printer = new PrintWriter(out);
+            PrintWriter printer = new PrintWriter(out, true);
 
             printer.printf(inputMsg);
-            printer.flush();
             socket.shutdownOutput();
 
             // 3. Get InputStream from Server response
             InputStream in = socket.getInputStream();
             respMsg = InputReader.inputStreamToString(in, ENCODING);
-            in.close();
+            socket.shutdownInput();
         } catch (IOException e) {
             // log and process io exception
             // omit here for socket demo

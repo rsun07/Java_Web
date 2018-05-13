@@ -30,17 +30,18 @@ public class TCPServer extends Thread implements AutoCloseable {
             // 3. Get Client input from socket InputStream
             InputStream in = socket.getInputStream();
             String respMsg = InputReader.inputStreamToString(in, ENCODING);
-            in.close();
+            socket.shutdownInput();
 
             // 4. Get Output Stream from socket and return to client
             OutputStream out = socket.getOutputStream();
-            PrintWriter printer = new PrintWriter(out);
+            PrintWriter printer = new PrintWriter(out, true);
 
             printer.printf("Request Received by TCP Server %s,\n"
                     + "Your input is : %s\n\n",
-                    this.getName() + "\n", respMsg);
-            printer.flush();
-        } catch (IOException e) {
+                    this.getName(), respMsg);
+            socket.shutdownOutput();
+        } catch (Exception e) {
+            e.printStackTrace();
             // log and process io exception
             // omit here for socket demo
         }
