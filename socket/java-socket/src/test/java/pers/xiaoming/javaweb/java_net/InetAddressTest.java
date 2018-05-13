@@ -1,4 +1,4 @@
-package pers.xiaoming.javaweb;
+package pers.xiaoming.javaweb.java_net;
 
 import org.junit.Ignore;
 import org.junit.Test;

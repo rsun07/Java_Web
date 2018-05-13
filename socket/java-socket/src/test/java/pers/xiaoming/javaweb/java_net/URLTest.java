@@ -1,10 +1,12 @@
-package pers.xiaoming.javaweb;
+package pers.xiaoming.javaweb.java_net;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.io.IOException;
 import java.net.URL;
 
+@Ignore("demo test")
 public class URLTest {
     @Test
     public void testURLMethods() throws IOException {
