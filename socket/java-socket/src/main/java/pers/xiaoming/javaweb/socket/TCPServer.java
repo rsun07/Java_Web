@@ -1,9 +1,9 @@
 package pers.xiaoming.javaweb.socket;
 
-import java.io.BufferedReader;
+import pers.xiaoming.javaweb.util.InputReader;
+
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.net.ServerSocket;
@@ -29,15 +29,7 @@ public class TCPServer extends Thread implements AutoCloseable {
         try {
             // 3. Get Client input from socket InputStream
             InputStream in = socket.getInputStream();
-            InputStreamReader inReader = new InputStreamReader(in, ENCODING);
-            BufferedReader bf = new BufferedReader(inReader);
-            StringBuilder sb = new StringBuilder();
-            String line;
-            while ((line = bf.readLine()) != null) {
-                sb.append(line);
-            }
-            bf.close();
-            inReader.close();
+            String respMsg = InputReader.inputStreamToString(in, ENCODING);
             in.close();
 
             // 4. Get Output Stream from socket and return to client
@@ -46,8 +38,8 @@ public class TCPServer extends Thread implements AutoCloseable {
 
             printer.printf("Request Received by TCP Server %s,\n"
                     + "Your input is : %s\n\n",
-                    this.getName() + "\n", sb.toString());
-            out.close();
+                    this.getName() + "\n", respMsg);
+            printer.flush();
         } catch (IOException e) {
             // log and process io exception
             // omit here for socket demo

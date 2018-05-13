@@ -1,9 +1,9 @@
 package pers.xiaoming.javaweb.java_net;
 
-import java.io.BufferedReader;
+import pers.xiaoming.javaweb.util.InputReader;
+
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.net.URL;
 
 public class URLBrowser {
@@ -12,18 +12,8 @@ public class URLBrowser {
     public static String browse(String host) throws IOException {
         URL url = new URL(host);
         InputStream in = url.openStream();
-        InputStreamReader inReader = new InputStreamReader(in, ENCODING);
-        BufferedReader bf = new BufferedReader(inReader);
-
-        StringBuilder sb = new StringBuilder();
-
-        String line;
-        while( (line = bf.readLine()) != null) {
-            sb.append(line);
-        }
-        bf.close();
-        inReader.close();
+        String response = InputReader.inputStreamToString(in, ENCODING);
         in.close();
-        return sb.toString();
+        return response;
     }
 }
