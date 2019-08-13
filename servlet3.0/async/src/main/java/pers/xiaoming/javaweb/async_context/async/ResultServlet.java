@@ -1,8 +1,6 @@
 package pers.xiaoming.javaweb.async_context.async;
 
 import pers.xiaoming.javaweb.common.Messages;
-
-import javax.servlet.AsyncContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;

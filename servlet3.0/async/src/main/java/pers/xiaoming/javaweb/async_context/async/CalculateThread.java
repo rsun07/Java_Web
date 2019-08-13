@@ -1,14 +1,9 @@
 package pers.xiaoming.javaweb.async_context.async;
 
 import pers.xiaoming.javaweb.common.Calculator;
-import pers.xiaoming.javaweb.common.Messages;
-
 import javax.servlet.AsyncContext;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import javax.xml.ws.spi.http.HttpContext;
-import java.io.PrintWriter;
 
 public class CalculateThread implements Runnable {
 
