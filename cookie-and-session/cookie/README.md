@@ -2,7 +2,7 @@
 How to run it, see [servlet-intro-readme](https://github.com/rsun07/Java_Web/tree/master/servlet-intro#how-to-run-it)
 
 ## Expected Behavior
-#### hit `localhost:8080/cookie` endpoint
+#### GET `localhost:8080/cookie` endpoint
 - request header:
 ```
 Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8
@@ -23,7 +23,7 @@ Set-Cookie: version=version_cookie
 Set-Cookie: ttl=ttl_cookie; Max-Age=10; Expires=Thu, 12-Apr-2018 20:13:18 GMT
 ```
 
-#### hit `localhost:8080/cookie` endpoint again
+#### GET `localhost:8080/cookie` endpoint again
 - request header:
 ```
 Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8
@@ -46,7 +46,7 @@ Set-Cookie: version=version_cookie
 Set-Cookie: ttl=ttl_cookie; Max-Age=10; Expires=Thu, 12-Apr-2018 20:37:21 GMT
 ```
 
-#### hit `localhost:8080/cookie/get` endpoint before cookie expires (within 10 seconds)
+#### GET `localhost:8080/cookie/get` endpoint before cookie expires (within 10 seconds)
 - request header:
 ```
 Connection: keep-alive
@@ -61,7 +61,7 @@ version = version_cookie version: 0
 ttl = ttl_cookie version: 0
 ```
 
-#### hit `localhost:8080/cookie/get` endpoint after cookie expired (after 10 seconds)
+#### GET `localhost:8080/cookie/get` endpoint after cookie expired (after 10 seconds)
 - request header:
 ```
 Connection: keep-alive
@@ -75,7 +75,7 @@ root = root_cookie version: 0
 version = version_cookie version: 0
 ```
 
-#### hit `localhost:8080/cookie/cookiepath` endpoint after cookie expired (after 10 seconds)
+#### GET `localhost:8080/cookie/cookiepath` endpoint after cookie expired (after 10 seconds)
 - Tomcat Localhost log:
 ```
 path = path_cookie version: 0
