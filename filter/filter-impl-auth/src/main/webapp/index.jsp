@@ -8,10 +8,12 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Log in</title>
+    <title>Index</title>
 </head>
 <body>
-    <form action=/login method="post">
+    Index page. <br>
+    Please login
+    <form action=./user/welcome.jsp method="post">
         User Name : <input type="text" name="uname"/> <br>
         Password : <input type="password" name="pword"/> <br>
         <input type="submit" value="Log In">

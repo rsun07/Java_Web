@@ -17,6 +17,6 @@
         <module>filter-lifecycle</module>
         <module>filter-config-and-context</module>
         <module>filter-dispatcher</module>
-        <module>practice-auth-filter</module>
+        <module>filter-impl-auth</module>
     </modules>
 </project>
