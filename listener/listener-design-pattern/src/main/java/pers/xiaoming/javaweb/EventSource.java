@@ -1,6 +1,6 @@
 package pers.xiaoming.javaweb;
 
-// Listenerable, 被监听者
+// Listenerable
 interface EventSource {
     void setListener(Listener listener);
 

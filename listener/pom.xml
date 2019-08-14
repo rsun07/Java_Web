@@ -14,7 +14,7 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>listener-pattern</module>
-        <module>count-practice</module>
+        <module>listener-design-pattern</module>
+        <module>listener-impl-count</module>
     </modules>
 </project>
