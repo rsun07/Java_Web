@@ -4,15 +4,14 @@ import javax.servlet.*;
 import java.io.IOException;
 import java.util.Enumeration;
 
-/*
+/**
  * If we could have a generic servlet, which already implements javax.servlet.Servlet
- * and .
- * Then other feature servlet doesn't need to implement all those common methods.
+ * and javax.servlet.ServletConfig, then other feature servlet(s) doesn't need to implement all those common methods.
  *
  * It uses the Adapter Design pattern, leave the sub class to implement the service function.
  *
  * In fact, javax.servlet.GenericServlet already did the job.
- * Here is just a simpler version for learning.
+ * Here is just a simpler version of that to show the general concept.
  *
  */
 public abstract class MyGenericServlet implements Servlet, ServletConfig {
@@ -27,8 +26,9 @@ public abstract class MyGenericServlet implements Servlet, ServletConfig {
         init();
     }
 
-    // A convenience method which can be overridden so that there's no need
-    // to call <code>super.init(config)</code>.
+    /** A convenience method which can be overridden so that there's no need
+     * to call <code>super.init(config)</code>.
+     **/
     public void init() {
 
     }
@@ -52,7 +52,7 @@ public abstract class MyGenericServlet implements Servlet, ServletConfig {
     }
 
 
-    // The following four are methods in ServletConfig
+    // The following four are methods from ServletConfig
     @Override
     public String getServletName() {
         return config.getServletName();
