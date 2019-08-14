@@ -3,7 +3,7 @@
 How to run it, see [servlet-intro-readme](https://github.com/rsun07/Java_Web/tree/master/servlet-intro#how-to-run-it)
 
 ## Expected Behavior
-- GET `localhost:8080/filter/config` endpoint, Tomcat Catalina Log:
+- GET `localhost:8080/filter/config` , Tomcat Catalina Log:
 ```
 Running Filter:
 Context Init param, namespace : context-namespace

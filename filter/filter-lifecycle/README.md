@@ -3,7 +3,7 @@
 How to run it, see [servlet-intro-readme](https://github.com/rsun07/Java_Web/tree/master/servlet-intro#how-to-run-it)
 
 ## Expected Behavior
-- GET `localhost:8080/filter/lifecycle` endpoint, Tomcat Catalina Log:
+- GET `localhost:8080/filter/lifecycle` , Tomcat Catalina Log:
 ```
 Connected to server
 [2018-04-14 04:30:15,183] Artifact filter-lifecycle:war: Artifact is being deployed, please wait...
@@ -43,7 +43,7 @@ Do Filter after filter chain
 Destroy My Filter
 ```
 
-- GET `localhost:8080/filter/nochain` endpoint, Tomcat Catalina Log:
+- GET `localhost:8080/filter/nochain` , Tomcat Catalina Log:
 ```
 Do No Chain Filter before filter chain
 Do No Chain Filter after filter chain

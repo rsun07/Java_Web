@@ -13,24 +13,24 @@ Init Servlet 2
 [2018-04-10 10:53:29,377] Artifact servlet-lifecycle:war: Artifact is deployed successfully
 [2018-04-10 10:53:29,377] Artifact servlet-lifecycle:war: Deploy took 478 milliseconds
 ```
-- GET `/lifecycle0` endpoint (servlet0 is set to lazy load)
+- GET `/lifecycle0`  (servlet0 is set to lazy load)
 ```
 Create Servlet 0
 Init Servlet 0
 Executing Servlet 0
 ```
-- GET `/lifecycle0` endpoint again
+- GET `/lifecycle0`  again
 ```
 Executing Servlet 0
 ```
-- GET `/lifecycle1` endpoint multiple times
+- GET `/lifecycle1`  multiple times
 ```
 Executing Servlet 1
 Executing Servlet 1
 Executing Servlet 1
 ...
 ```
-- GET `/lifecycle2` endpoint multiple times
+- GET `/lifecycle2`  multiple times
 ```
 Executing Servlet 2
 Executing Servlet 2

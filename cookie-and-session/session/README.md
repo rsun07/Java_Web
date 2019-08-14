@@ -3,7 +3,7 @@ How to run it, see [servlet-intro-readme](https://github.com/rsun07/Java_Web/tre
 
 ## Expected Behavior
 ### Session creation and get
-#### GET `localhost:8080/session/createusername=myname` endpoint
+#### GET `localhost:8080/session/createusername=myname` 
 - request header:
 ```
 no JSESSIONID
@@ -19,7 +19,7 @@ Set-Cookie →JSESSIONID=057ECEAA14CBAAA6D271B6861C8AC13D; Path=/; HttpOnly
 caller is : test, username is : myuser
 ```
 
-#### GET `localhost:8080//session/get` endpoint
+#### GET `localhost:8080//session/get` 
 - response body:
 ```
 caller is : test, username is : null

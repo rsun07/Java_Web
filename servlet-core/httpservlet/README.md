@@ -5,7 +5,7 @@ How to run it, see [servlet-intro-readme](https://github.com/rsun07/Java_Web/tre
 
 ## Expected Behavior
 ### Parameters
-- GET `localhost:8080/httpservlet/params?name=ryan,mike,aaa&age=23` endpoint, both Http response and Tomcat Catalina Log:
+- GET `localhost:8080/httpservlet/params?name=ryan,mike,aaa&age=23` , both Http response and Tomcat Catalina Log:
 ```
 getParameter("name") is ryan,mike,aaa
 getParameterValues("name")[0] is ryan,mike,aaa
@@ -15,7 +15,7 @@ age is : 23
 
 ### Forward
 #### forward
-- GET `localhost:8080/httpservlet/forward/forwardserver` endpoint, both Http response and Tomcat Catalina Log:
+- GET `localhost:8080/httpservlet/forward/forwardserver` , both Http response and Tomcat Catalina Log:
 ```
 Executing Forward Forward Receiptor.
 The attribute is, [MyAttribute] 
@@ -23,7 +23,7 @@ The request implementation is, [class org.apache.catalina.core.ApplicationHttpRe
 The response implementation is, [class org.apache.catalina.connector.ResponseFacade] 
 ```
 #### include
-- GET `localhost:8080/httpservlet/forward/includeserver` endpoint, both Http response and Tomcat Catalina Log:
+- GET `localhost:8080/httpservlet/forward/includeserver` , both Http response and Tomcat Catalina Log:
 ```
 Before Include Server forward Executing forward Include Receiptor.
 The attribute is, [MyAttribute]
@@ -33,7 +33,7 @@ After Include Server forward
 ```
 
 ### Redirect
-- GET `localhost:8080/httpservlet/redirect/redirectserver` endpoint, will be redirected to `localhost:8080/httpservlet/redirect/redirectreceiptor`. <br>
+- GET `localhost:8080/httpservlet/redirect/redirectserver` , will be redirected to `localhost:8080/httpservlet/redirect/redirectreceiptor`. <br>
 Then both Http response and Tomcat Catalina Log:
 ```
 Executing Redirect Receiptor.

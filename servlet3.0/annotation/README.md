@@ -4,7 +4,7 @@ How to run it, see [servlet-intro-readme](https://github.com/rsun07/Java_Web/tre
 
 ## Expected Behavior
 ### GET Request
-- GET `localhost:8080/annotation/my/abc123` endpoint
+- GET `localhost:8080/annotation/my/abc123` 
 - response body:
 ``` 
 	Executing my filter		Executing my servlet		Executing my filter AGAIN	
@@ -18,7 +18,7 @@ Executing my filter AGAIN
 ```
 
 ### Redirect
-- GET `localhost:8080/annotation/redirect` endpoint
+- GET `localhost:8080/annotation/redirect` 
 - response body:
 ``` 
 	Executing redirect filter		Executing my servlet		Executing redirect filter AGAIN	
