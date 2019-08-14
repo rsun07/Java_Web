@@ -1,7 +1,6 @@
 # Java Web
-Java Web basic learning : <br />
-<br />
-- Servlet <br />
-- Cookie and Session <br />
-- Listener <br />
-- Filter <br />
+Java Web concepts and implementations. Including the following parts:
+- Servlet
+- Cookie and Session
+- Listener
+- Filtergit 
