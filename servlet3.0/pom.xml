@@ -17,6 +17,6 @@
         <module>annotation</module>
         <module>file-upload</module>
         <module>async</module>
-        <module>dynamic_reg</module>
+        <module>servlet-dynamic-register</module>
     </modules>
 </project>
