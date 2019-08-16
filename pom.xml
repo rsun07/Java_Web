@@ -17,7 +17,6 @@
         <module>filter</module>
         <module>servlet3.0</module>
         <module>servlet-container</module>
-        <module>socket</module>
     </modules>
 
     <properties>
